@@ -1,0 +1,9 @@
+[submodule "Animated-GIF-iPhone"]
+	path = Animated-GIF-iPhone
+	url = https://github.com/frijole/Animated-GIF-iPhone.git
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "uiimage-from-animated-gif"]
+	path = uiimage-from-animated-gif
+	url = https://github.com/mayoff/uiimage-from-animated-gif.git
