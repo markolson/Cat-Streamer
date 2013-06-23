@@ -24,6 +24,9 @@
 		F070AFFD177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
 		F070B005177716340027C7BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F070B003177716340027C7BA /* InfoPlist.strings */; };
 		F070B008177716340027C7BA /* Cat_StreamerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B007177716340027C7BA /* Cat_StreamerTests.m */; };
+		F070B014177716AF0027C7BA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B012177716AF0027C7BA /* libTestFlight.a */; };
+		F070B015177716AF0027C7BA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B012177716AF0027C7BA /* libTestFlight.a */; };
+		F070B017177716CA0027C7BA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B016177716CA0027C7BA /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		F070B004177716340027C7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F070B006177716340027C7BA /* Cat_StreamerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat_StreamerTests.h; sourceTree = "<group>"; };
 		F070B007177716340027C7BA /* Cat_StreamerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat_StreamerTests.m; sourceTree = "<group>"; };
+		F070B012177716AF0027C7BA /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		F070B013177716AF0027C7BA /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		F070B016177716CA0027C7BA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +73,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F070B017177716CA0027C7BA /* libz.dylib in Frameworks */,
 				F070AFD4177716330027C7BA /* UIKit.framework in Frameworks */,
 				F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */,
 				F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */,
+				F070B014177716AF0027C7BA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +88,7 @@
 				F070AFFB177716330027C7BA /* SenTestingKit.framework in Frameworks */,
 				F070AFFC177716330027C7BA /* UIKit.framework in Frameworks */,
 				F070AFFD177716330027C7BA /* Foundation.framework in Frameworks */,
+				F070B015177716AF0027C7BA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +98,7 @@
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
+				F070B011177716650027C7BA /* Submodules */,
 				F070AFD9177716330027C7BA /* Cat Streamer */,
 				F070B000177716340027C7BA /* Cat StreamerTests */,
 				F070AFD2177716330027C7BA /* Frameworks */,
@@ -108,6 +118,7 @@
 		F070AFD2177716330027C7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F070B016177716CA0027C7BA /* libz.dylib */,
 				F070AFD3177716330027C7BA /* UIKit.framework */,
 				F070AFD5177716330027C7BA /* Foundation.framework */,
 				F070AFD7177716330027C7BA /* CoreGraphics.framework */,
@@ -133,6 +144,8 @@
 		F070AFDA177716330027C7BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F070B012177716AF0027C7BA /* libTestFlight.a */,
+				F070B013177716AF0027C7BA /* TestFlight.h */,
 				F070AFDB177716330027C7BA /* Cat Streamer-Info.plist */,
 				F070AFDC177716330027C7BA /* InfoPlist.strings */,
 				F070AFDF177716330027C7BA /* main.m */,
@@ -161,6 +174,13 @@
 				F070B003177716340027C7BA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F070B011177716650027C7BA /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Submodules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +419,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Cat Streamer\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,6 +434,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Cat Streamer\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -426,6 +454,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat StreamerTests/Cat StreamerTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Cat Streamer\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -443,6 +475,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat StreamerTests/Cat StreamerTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Cat Streamer\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
