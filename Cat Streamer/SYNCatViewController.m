@@ -30,6 +30,17 @@
     return self;
 }
 
+
+- (void)startPage:(NSNotification *)sender
+{
+    NSArray *i = (NSArray *)[sender object];
+    if([i count] == 1) {
+        [self setImageURL:[i objectAtIndex:0]];
+        [self loadImage];
+    }
+}
+
+
 - (void)imageReady:(NSNotification *)sender
 {
     if([sender object] == imageView) {
@@ -46,6 +57,7 @@
     [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:cat] ];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startPage:) name:@"initialImageAvailable" object:nil];
     
     [self loadImage];
     

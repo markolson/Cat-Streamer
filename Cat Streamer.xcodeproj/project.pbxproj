@@ -13,9 +13,6 @@
 		F070AFDE177716330027C7BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F070AFDC177716330027C7BA /* InfoPlist.strings */; };
 		F070AFE0177716330027C7BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F070AFDF177716330027C7BA /* main.m */; };
 		F070AFE4177716330027C7BA /* SYNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F070AFE3177716330027C7BA /* SYNAppDelegate.m */; };
-		F070AFE6177716330027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE5177716330027C7BA /* Default.png */; };
-		F070AFE8177716330027C7BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE7177716330027C7BA /* Default@2x.png */; };
-		F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE9177716330027C7BA /* Default-568h@2x.png */; };
 		F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070AFEC177716330027C7BA /* SYNRootViewController.m */; };
 		F070AFFB177716330027C7BA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFFA177716330027C7BA /* SenTestingKit.framework */; };
 		F070AFFC177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
@@ -58,8 +55,6 @@
 		F070B16717772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
 		F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */; };
 		F070B16A17777EE70027C7BA /* nyan-cat-white-background.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */; };
-		F070B170177798140027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16D177798140027C7BA /* Default-568h@2x.png */; };
-		F070B171177798140027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16D177798140027C7BA /* Default-568h@2x.png */; };
 		F070B172177798140027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16E177798140027C7BA /* Default.png */; };
 		F070B173177798140027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16E177798140027C7BA /* Default.png */; };
 		F070B174177798140027C7BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16F177798140027C7BA /* Default@2x.png */; };
@@ -88,9 +83,6 @@
 		F070AFE1177716330027C7BA /* Cat Streamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cat Streamer-Prefix.pch"; sourceTree = "<group>"; };
 		F070AFE2177716330027C7BA /* SYNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNAppDelegate.h; sourceTree = "<group>"; };
 		F070AFE3177716330027C7BA /* SYNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNAppDelegate.m; sourceTree = "<group>"; };
-		F070AFE5177716330027C7BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F070AFE7177716330027C7BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F070AFE9177716330027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F070AFEB177716330027C7BA /* SYNRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNRootViewController.h; sourceTree = "<group>"; };
 		F070AFEC177716330027C7BA /* SYNRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNRootViewController.m; sourceTree = "<group>"; };
 		F070AFF9177716330027C7BA /* Cat StreamerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cat StreamerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,10 +124,9 @@
 		F070B16217772AD50027C7BA /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
 		F070B16317772AD50027C7BA /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
 		F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "nyan-cat-white-background.gif"; sourceTree = "<group>"; };
-		F070B16D177798140027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F070B16E177798140027C7BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F070B16F177798140027C7BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F070B176177798750027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F070B176177798750027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +160,6 @@
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
-				F070B176177798750027C7BA /* Default-568h@2x.png */,
 				F070AFD9177716330027C7BA /* Cat Streamer */,
 				F070B000177716340027C7BA /* Cat StreamerTests */,
 				F070B011177716650027C7BA /* Submodules */,
@@ -228,9 +218,6 @@
 				F070AFDC177716330027C7BA /* InfoPlist.strings */,
 				F070AFDF177716330027C7BA /* main.m */,
 				F070AFE1177716330027C7BA /* Cat Streamer-Prefix.pch */,
-				F070AFE5177716330027C7BA /* Default.png */,
-				F070AFE7177716330027C7BA /* Default@2x.png */,
-				F070AFE9177716330027C7BA /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -311,7 +298,7 @@
 		F070B16C177798140027C7BA /* Launchers */ = {
 			isa = PBXGroup;
 			children = (
-				F070B16D177798140027C7BA /* Default-568h@2x.png */,
+				F070B176177798750027C7BA /* Default-568h@2x.png */,
 				F070B16E177798140027C7BA /* Default.png */,
 				F070B16F177798140027C7BA /* Default@2x.png */,
 			);
@@ -391,14 +378,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F070AFDE177716330027C7BA /* InfoPlist.strings in Resources */,
-				F070AFE6177716330027C7BA /* Default.png in Resources */,
-				F070AFE8177716330027C7BA /* Default@2x.png in Resources */,
-				F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */,
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
 				F070B16417772AD50027C7BA /* 1.gif in Resources */,
 				F070B16617772AD50027C7BA /* 2.gif in Resources */,
 				F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
-				F070B170177798140027C7BA /* Default-568h@2x.png in Resources */,
 				F070B172177798140027C7BA /* Default.png in Resources */,
 				F070B174177798140027C7BA /* Default@2x.png in Resources */,
 				F070B177177798760027C7BA /* Default-568h@2x.png in Resources */,
@@ -414,7 +397,6 @@
 				F070B16517772AD50027C7BA /* 1.gif in Resources */,
 				F070B16717772AD50027C7BA /* 2.gif in Resources */,
 				F070B16A17777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
-				F070B171177798140027C7BA /* Default-568h@2x.png in Resources */,
 				F070B173177798140027C7BA /* Default.png in Resources */,
 				F070B175177798140027C7BA /* Default@2x.png in Resources */,
 			);

@@ -13,7 +13,8 @@
 #define TAGOFFSET 5000
 
 @interface CatHerder() {
-    BOOL _fetchingURLs;
+    int _fetchingURLs;
+    int relativeOffset;
 }
 
 @end
@@ -54,29 +55,27 @@
     
     SYNCatViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Cat"];
     vc.view.tag = 5000 + index;
-    vc.imageURL = [images objectAtIndex:index];
+    if([images count] > 0) { vc.imageURL = [images objectAtIndex:index]; }
     return vc;
 }
 
--(void)fetchList:(NSInteger)count {
-    if(_fetchingURLs) { return; }
-    NSLog(@"loading more. %d", [images count]);
+-(void)fetchList:(NSUInteger)count {
+    if(_fetchingURLs > 0) { return; }
     NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/cats.json"];
-    _fetchingURLs = YES;
+    _fetchingURLs += 1;
     
     for(int i = 0; i < count; i++) {
         AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            // parse 'it
             NSLog(@"%@", [JSON valueForKey:@"catpic"]);
             [JSON valueForKey:@"catpic"] ? [self.images addObject:[JSON valueForKey:@"catpic"]] : nil;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"imageAvailable" object:self.images];
-            // clear the block
-            _fetchingURLs = NO;
+            if([self.images count] == 1) { [[NSNotificationCenter defaultCenter] postNotificationName:@"initialImageAvailable" object:self.images]; }
+            _fetchingURLs -= 1;
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            //
-            NSLog(@"failed to download new url");
+            NSLog(@"Uh-oh.");
+            _fetchingURLs -= 1;
         }];
         [tmpRequest start];
     }
+    
 }
 @end
