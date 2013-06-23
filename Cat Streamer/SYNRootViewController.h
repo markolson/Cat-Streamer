@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SYNCatHerder.h"
 
-@interface SYNViewController : UIViewController <UIPageViewControllerDelegate>
+@interface SYNRootViewController : UIViewController <UIPageViewControllerDelegate>
+
+@property (strong, nonatomic) CatHerder *herder;
+@property (strong, nonatomic) UIPageViewController *pageViewController;
 
 @end

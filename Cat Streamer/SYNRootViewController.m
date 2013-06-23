@@ -7,17 +7,38 @@
 //
 
 #import "SYNRootViewController.h"
+#import "SYNCatViewController.h"
 
-@interface SYNViewController ()
+@interface SYNRootViewController ()
 
 @end
 
-@implementation SYNViewController
+@implementation SYNRootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageViewController.delegate = self;
+    
+    // create the cat herder, our UIPageViewControllerDataSource and assign it as the datasource
+    // for the page controller
+    self.herder = [[CatHerder alloc] init];
+    self.pageViewController.dataSource = self.herder;
+    
+
+    
+    SYNCatViewController *catViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Cat"];
+    NSArray *viewControllers = @[catViewController];
+    
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationOrientationHorizontal animated:NO completion:NULL];
+    
+
+    self.pageViewController.view.frame = self.view.bounds;
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
 }
 
 - (void)didReceiveMemoryWarning

@@ -17,7 +17,6 @@
 		F070AFE8177716330027C7BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE7177716330027C7BA /* Default@2x.png */; };
 		F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE9177716330027C7BA /* Default-568h@2x.png */; };
 		F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070AFEC177716330027C7BA /* SYNRootViewController.m */; };
-		F070AFF0177716330027C7BA /* SYNViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F070AFEE177716330027C7BA /* SYNViewController_iPhone.xib */; };
 		F070AFFB177716330027C7BA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFFA177716330027C7BA /* SenTestingKit.framework */; };
 		F070AFFC177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
 		F070AFFD177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
@@ -51,6 +50,12 @@
 		F070B154177723C30027C7BA /* SYNCatHerder.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B152177723C30027C7BA /* SYNCatHerder.m */; };
 		F070B157177724470027C7BA /* SYNCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B156177724470027C7BA /* SYNCatViewController.m */; };
 		F070B158177724470027C7BA /* SYNCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B156177724470027C7BA /* SYNCatViewController.m */; };
+		F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F070B15E1777285A0027C7BA /* Cats.storyboard */; };
+		F070B1601777285A0027C7BA /* Cats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F070B15E1777285A0027C7BA /* Cats.storyboard */; };
+		F070B16417772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */; };
+		F070B16517772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */; };
+		F070B16617772AD50027C7BA /* EAVat.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* EAVat.gif */; };
+		F070B16717772AD50027C7BA /* EAVat.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* EAVat.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +84,6 @@
 		F070AFE9177716330027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F070AFEB177716330027C7BA /* SYNRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNRootViewController.h; sourceTree = "<group>"; };
 		F070AFEC177716330027C7BA /* SYNRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNRootViewController.m; sourceTree = "<group>"; };
-		F070AFEF177716330027C7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SYNViewController_iPhone.xib; sourceTree = "<group>"; };
 		F070AFF9177716330027C7BA /* Cat StreamerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cat StreamerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F070AFFA177716330027C7BA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F070B002177716340027C7BA /* Cat StreamerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cat StreamerTests-Info.plist"; sourceTree = "<group>"; };
@@ -115,6 +119,9 @@
 		F070B152177723C30027C7BA /* SYNCatHerder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYNCatHerder.m; path = ../SYNCatHerder.m; sourceTree = "<group>"; };
 		F070B155177724470027C7BA /* SYNCatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNCatViewController.h; sourceTree = "<group>"; };
 		F070B156177724470027C7BA /* SYNCatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNCatViewController.m; sourceTree = "<group>"; };
+		F070B15E1777285A0027C7BA /* Cats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cats.storyboard; sourceTree = "<group>"; };
+		F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anigif_enhanced-buzz-29619-1323296363-14.gif"; sourceTree = "<group>"; };
+		F070B16317772AD50027C7BA /* EAVat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = EAVat.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,13 +191,13 @@
 				F070AFE2177716330027C7BA /* SYNAppDelegate.h */,
 				F070AFE3177716330027C7BA /* SYNAppDelegate.m */,
 				F070AFEB177716330027C7BA /* SYNRootViewController.h */,
+				F070AFEC177716330027C7BA /* SYNRootViewController.m */,
 				F070B155177724470027C7BA /* SYNCatViewController.h */,
 				F070B156177724470027C7BA /* SYNCatViewController.m */,
-				F070AFEC177716330027C7BA /* SYNRootViewController.m */,
 				F070B151177723C20027C7BA /* SYNCatHerder.h */,
 				F070B152177723C30027C7BA /* SYNCatHerder.m */,
-				F070AFEE177716330027C7BA /* SYNViewController_iPhone.xib */,
 				F070AFDA177716330027C7BA /* Supporting Files */,
+				F070B15E1777285A0027C7BA /* Cats.storyboard */,
 			);
 			path = "Cat Streamer";
 			sourceTree = "<group>";
@@ -198,6 +205,7 @@
 		F070AFDA177716330027C7BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F070B16117772AD50027C7BA /* Cats */,
 				F070B012177716AF0027C7BA /* libTestFlight.a */,
 				F070B013177716AF0027C7BA /* TestFlight.h */,
 				F070AFDB177716330027C7BA /* Cat Streamer-Info.plist */,
@@ -264,6 +272,15 @@
 				F070B058177718D30027C7BA /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		F070B16117772AD50027C7BA /* Cats */ = {
+			isa = PBXGroup;
+			children = (
+				F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */,
+				F070B16317772AD50027C7BA /* EAVat.gif */,
+			);
+			path = Cats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +359,9 @@
 				F070AFE6177716330027C7BA /* Default.png in Resources */,
 				F070AFE8177716330027C7BA /* Default@2x.png in Resources */,
 				F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */,
-				F070AFF0177716330027C7BA /* SYNViewController_iPhone.xib in Resources */,
+				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
+				F070B16417772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */,
+				F070B16617772AD50027C7BA /* EAVat.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +370,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F070B005177716340027C7BA /* InfoPlist.strings in Resources */,
+				F070B1601777285A0027C7BA /* Cats.storyboard in Resources */,
+				F070B16517772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */,
+				F070B16717772AD50027C7BA /* EAVat.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,14 +454,6 @@
 				F070AFDD177716330027C7BA /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F070AFEE177716330027C7BA /* SYNViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F070AFEF177716330027C7BA /* en */,
-			);
-			name = SYNViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 		F070B003177716340027C7BA /* InfoPlist.strings */ = {

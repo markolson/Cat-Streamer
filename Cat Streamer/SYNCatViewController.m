@@ -18,6 +18,7 @@
 @end
 
 @implementation SYNCatViewController
+@synthesize imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +33,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSLog(@"heyo!");
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"EAVat" ofType:@"gif"];  
+    NSData *cat = [NSData dataWithContentsOfFile:filePath];
+    [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:cat] ];
+    
 }
 
 - (void)didReceiveMemoryWarning

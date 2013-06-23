@@ -10,4 +10,6 @@
 
 @interface SYNCatViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
