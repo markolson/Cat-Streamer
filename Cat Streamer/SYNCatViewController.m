@@ -9,7 +9,7 @@
 #import "SYNCatViewController.h"
 #import "SYNCatHerder.h"
 #import "SYNRootViewController.h"
-
+#import "AFNetworking.h"
 #import "UIImage+animatedGIF.h"
 
 
@@ -18,7 +18,7 @@
 @end
 
 @implementation SYNCatViewController
-@synthesize imageView;
+@synthesize imageView, imageURL, imageData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,15 +29,42 @@
     return self;
 }
 
+- (void)imageReady:(NSNotification *)sender
+{
+    NSLog(@"image downloaded!");
+    [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    NSLog(@"heyo!");
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"EAVat" ofType:@"gif"];  
     NSData *cat = [NSData dataWithContentsOfFile:filePath];
     [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:cat] ];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
+    
+    [self loadImage];
+}
+
+-(void)loadImage {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *url = [NSURL URLWithString:self.imageURL];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSLog(@"%@", self.imageURL);
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id data) {
+            imageData = data;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:imageView];
+        } failure:nil];
+        [operation start];
+        
+    });
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 - (void)didReceiveMemoryWarning

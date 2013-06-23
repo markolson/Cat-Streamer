@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class SYNCatViewController;
+
+
 @interface CatHerder : NSObject <UIPageViewControllerDataSource>
 
+- (SYNCatViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
+
+@property (strong, nonatomic) NSMutableArray *images;
+@property NSUInteger pageNumber;
 @end

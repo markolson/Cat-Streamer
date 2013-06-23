@@ -28,6 +28,7 @@
     self.pageViewController.dataSource = self.herder;
     
 
+    [self.herder viewControllerAtIndex:0 storyboard:self.storyboard];
     
     SYNCatViewController *catViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Cat"];
     NSArray *viewControllers = @[catViewController];
@@ -39,6 +40,8 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(advancePage:) name:@"pageViewAdvanceRequest" object:nil];
 }
 
 - (void)didReceiveMemoryWarning

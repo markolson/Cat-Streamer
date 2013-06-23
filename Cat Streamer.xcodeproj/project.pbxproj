@@ -52,10 +52,10 @@
 		F070B158177724470027C7BA /* SYNCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B156177724470027C7BA /* SYNCatViewController.m */; };
 		F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F070B15E1777285A0027C7BA /* Cats.storyboard */; };
 		F070B1601777285A0027C7BA /* Cats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F070B15E1777285A0027C7BA /* Cats.storyboard */; };
-		F070B16417772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */; };
-		F070B16517772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */; };
-		F070B16617772AD50027C7BA /* EAVat.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* EAVat.gif */; };
-		F070B16717772AD50027C7BA /* EAVat.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* EAVat.gif */; };
+		F070B16417772AD50027C7BA /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* 1.gif */; };
+		F070B16517772AD50027C7BA /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* 1.gif */; };
+		F070B16617772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
+		F070B16717772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,8 +120,8 @@
 		F070B155177724470027C7BA /* SYNCatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNCatViewController.h; sourceTree = "<group>"; };
 		F070B156177724470027C7BA /* SYNCatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNCatViewController.m; sourceTree = "<group>"; };
 		F070B15E1777285A0027C7BA /* Cats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cats.storyboard; sourceTree = "<group>"; };
-		F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anigif_enhanced-buzz-29619-1323296363-14.gif"; sourceTree = "<group>"; };
-		F070B16317772AD50027C7BA /* EAVat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = EAVat.gif; sourceTree = "<group>"; };
+		F070B16217772AD50027C7BA /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		F070B16317772AD50027C7BA /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,8 +277,8 @@
 		F070B16117772AD50027C7BA /* Cats */ = {
 			isa = PBXGroup;
 			children = (
-				F070B16217772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif */,
-				F070B16317772AD50027C7BA /* EAVat.gif */,
+				F070B16217772AD50027C7BA /* 1.gif */,
+				F070B16317772AD50027C7BA /* 2.gif */,
 			);
 			path = Cats;
 			sourceTree = "<group>";
@@ -360,8 +360,8 @@
 				F070AFE8177716330027C7BA /* Default@2x.png in Resources */,
 				F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */,
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
-				F070B16417772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */,
-				F070B16617772AD50027C7BA /* EAVat.gif in Resources */,
+				F070B16417772AD50027C7BA /* 1.gif in Resources */,
+				F070B16617772AD50027C7BA /* 2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,8 +371,8 @@
 			files = (
 				F070B005177716340027C7BA /* InfoPlist.strings in Resources */,
 				F070B1601777285A0027C7BA /* Cats.storyboard in Resources */,
-				F070B16517772AD50027C7BA /* anigif_enhanced-buzz-29619-1323296363-14.gif in Resources */,
-				F070B16717772AD50027C7BA /* EAVat.gif in Resources */,
+				F070B16517772AD50027C7BA /* 1.gif in Resources */,
+				F070B16717772AD50027C7BA /* 2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

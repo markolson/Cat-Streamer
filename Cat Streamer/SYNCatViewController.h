@@ -11,5 +11,7 @@
 @interface SYNCatViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) NSData *imageData;
+@property (strong, nonatomic) NSString *imageURL;
 
 @end
