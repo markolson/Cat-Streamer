@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Mark Olson. All rights reserved.
 //
 
-#import "SYNViewController.h"
+#import "SYNRootViewController.h"
 
 @interface SYNViewController ()
 

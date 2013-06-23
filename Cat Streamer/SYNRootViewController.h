@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SYNCatHerder.h"
 
-@interface SYNViewController : UIViewController
+@interface SYNViewController : UIViewController <UIPageViewControllerDelegate>
 
 @end

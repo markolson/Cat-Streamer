@@ -16,9 +16,8 @@
 		F070AFE6177716330027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE5177716330027C7BA /* Default.png */; };
 		F070AFE8177716330027C7BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE7177716330027C7BA /* Default@2x.png */; };
 		F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070AFE9177716330027C7BA /* Default-568h@2x.png */; };
-		F070AFED177716330027C7BA /* SYNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070AFEC177716330027C7BA /* SYNViewController.m */; };
+		F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070AFEC177716330027C7BA /* SYNRootViewController.m */; };
 		F070AFF0177716330027C7BA /* SYNViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F070AFEE177716330027C7BA /* SYNViewController_iPhone.xib */; };
-		F070AFF3177716330027C7BA /* SYNViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F070AFF1177716330027C7BA /* SYNViewController_iPad.xib */; };
 		F070AFFB177716330027C7BA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFFA177716330027C7BA /* SenTestingKit.framework */; };
 		F070AFFC177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
 		F070AFFD177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
@@ -48,6 +47,10 @@
 		F070B13D17771A710027C7BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B12417771A710027C7BA /* UIImage+animatedGIF.m */; };
 		F070B13E17771A710027C7BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B12417771A710027C7BA /* UIImage+animatedGIF.m */; };
 		F070B14917771AA10027C7BA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B14817771AA10027C7BA /* ImageIO.framework */; };
+		F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B152177723C30027C7BA /* SYNCatHerder.m */; };
+		F070B154177723C30027C7BA /* SYNCatHerder.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B152177723C30027C7BA /* SYNCatHerder.m */; };
+		F070B157177724470027C7BA /* SYNCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B156177724470027C7BA /* SYNCatViewController.m */; };
+		F070B158177724470027C7BA /* SYNCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B156177724470027C7BA /* SYNCatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +77,9 @@
 		F070AFE5177716330027C7BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F070AFE7177716330027C7BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F070AFE9177716330027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F070AFEB177716330027C7BA /* SYNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNViewController.h; sourceTree = "<group>"; };
-		F070AFEC177716330027C7BA /* SYNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNViewController.m; sourceTree = "<group>"; };
+		F070AFEB177716330027C7BA /* SYNRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNRootViewController.h; sourceTree = "<group>"; };
+		F070AFEC177716330027C7BA /* SYNRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNRootViewController.m; sourceTree = "<group>"; };
 		F070AFEF177716330027C7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SYNViewController_iPhone.xib; sourceTree = "<group>"; };
-		F070AFF2177716330027C7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SYNViewController_iPad.xib; sourceTree = "<group>"; };
 		F070AFF9177716330027C7BA /* Cat StreamerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cat StreamerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F070AFFA177716330027C7BA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F070B002177716340027C7BA /* Cat StreamerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cat StreamerTests-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +111,10 @@
 		F070B12317771A710027C7BA /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "uiimage-from-animated-gif/uiimage-from-animated-gif/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		F070B12417771A710027C7BA /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+animatedGIF.m"; path = "uiimage-from-animated-gif/uiimage-from-animated-gif/UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		F070B14817771AA10027C7BA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F070B151177723C20027C7BA /* SYNCatHerder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYNCatHerder.h; path = ../SYNCatHerder.h; sourceTree = "<group>"; };
+		F070B152177723C30027C7BA /* SYNCatHerder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYNCatHerder.m; path = ../SYNCatHerder.m; sourceTree = "<group>"; };
+		F070B155177724470027C7BA /* SYNCatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNCatViewController.h; sourceTree = "<group>"; };
+		F070B156177724470027C7BA /* SYNCatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNCatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +148,6 @@
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
-				F070B14817771AA10027C7BA /* ImageIO.framework */,
 				F070AFD9177716330027C7BA /* Cat Streamer */,
 				F070B000177716340027C7BA /* Cat StreamerTests */,
 				F070B011177716650027C7BA /* Submodules */,
@@ -163,6 +168,7 @@
 		F070AFD2177716330027C7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F070B14817771AA10027C7BA /* ImageIO.framework */,
 				F070B016177716CA0027C7BA /* libz.dylib */,
 				F070AFD3177716330027C7BA /* UIKit.framework */,
 				F070AFD5177716330027C7BA /* Foundation.framework */,
@@ -177,10 +183,13 @@
 			children = (
 				F070AFE2177716330027C7BA /* SYNAppDelegate.h */,
 				F070AFE3177716330027C7BA /* SYNAppDelegate.m */,
-				F070AFEB177716330027C7BA /* SYNViewController.h */,
-				F070AFEC177716330027C7BA /* SYNViewController.m */,
+				F070AFEB177716330027C7BA /* SYNRootViewController.h */,
+				F070B155177724470027C7BA /* SYNCatViewController.h */,
+				F070B156177724470027C7BA /* SYNCatViewController.m */,
+				F070AFEC177716330027C7BA /* SYNRootViewController.m */,
+				F070B151177723C20027C7BA /* SYNCatHerder.h */,
+				F070B152177723C30027C7BA /* SYNCatHerder.m */,
 				F070AFEE177716330027C7BA /* SYNViewController_iPhone.xib */,
-				F070AFF1177716330027C7BA /* SYNViewController_iPad.xib */,
 				F070AFDA177716330027C7BA /* Supporting Files */,
 			);
 			path = "Cat Streamer";
@@ -334,7 +343,6 @@
 				F070AFE8177716330027C7BA /* Default@2x.png in Resources */,
 				F070AFEA177716330027C7BA /* Default-568h@2x.png in Resources */,
 				F070AFF0177716330027C7BA /* SYNViewController_iPhone.xib in Resources */,
-				F070AFF3177716330027C7BA /* SYNViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +379,7 @@
 			files = (
 				F070AFE0177716330027C7BA /* main.m in Sources */,
 				F070AFE4177716330027C7BA /* SYNAppDelegate.m in Sources */,
-				F070AFED177716330027C7BA /* SYNViewController.m in Sources */,
+				F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */,
 				F070B0A4177718D40027C7BA /* AFHTTPClient.m in Sources */,
 				F070B0A6177718D40027C7BA /* AFHTTPRequestOperation.m in Sources */,
 				F070B0A8177718D40027C7BA /* AFImageRequestOperation.m in Sources */,
@@ -382,6 +390,8 @@
 				F070B0B2177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
 				F070B0B4177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
 				F070B13D17771A710027C7BA /* UIImage+animatedGIF.m in Sources */,
+				F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */,
+				F070B157177724470027C7BA /* SYNCatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +410,8 @@
 				F070B0B3177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
 				F070B0B5177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
 				F070B13E17771A710027C7BA /* UIImage+animatedGIF.m in Sources */,
+				F070B154177723C30027C7BA /* SYNCatHerder.m in Sources */,
+				F070B158177724470027C7BA /* SYNCatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +440,6 @@
 				F070AFEF177716330027C7BA /* en */,
 			);
 			name = SYNViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		F070AFF1177716330027C7BA /* SYNViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F070AFF2177716330027C7BA /* en */,
-			);
-			name = SYNViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		F070B003177716340027C7BA /* InfoPlist.strings */ = {

@@ -8,7 +8,7 @@
 
 #import "SYNAppDelegate.h"
 
-#import "SYNViewController.h"
+#import "SYNRootViewController.h"
 
 @implementation SYNAppDelegate
 
@@ -18,8 +18,6 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[SYNViewController alloc] initWithNibName:@"SYNViewController_iPhone" bundle:nil];
-    } else {
-        self.viewController = [[SYNViewController alloc] initWithNibName:@"SYNViewController_iPad" bundle:nil];
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
