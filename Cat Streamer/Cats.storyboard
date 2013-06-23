@@ -11,7 +11,6 @@
                     <view key="view" contentMode="scaleToFill" id="JYJ-Bo-yRV">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coe-F9-CwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -23,32 +22,35 @@
             <objects>
                 <viewController storyboardIdentifier="Cat" id="CsK-11-Ove" customClass="SYNCatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNJ-JL-Rtx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="gsG-5l-Hq9">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="klO-UQ-Zz5"/>
-                                </constraints>
-                            </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="EAVat.gif" translatesAutoresizingMaskIntoConstraints="NO" id="cZ7-Rh-cU7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="nyan-cat-white-background.gif" translatesAutoresizingMaskIntoConstraints="NO" id="cZ7-Rh-cU7">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loooooaaaadddddinnnnggggg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJq-jI-xes">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aJq-jI-xes" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="7gA-dt-lR8"/>
                             <constraint firstItem="cZ7-Rh-cU7" firstAttribute="bottom" secondItem="nNJ-JL-Rtx" secondAttribute="bottom" type="default" id="JoZ-Ut-gdh"/>
                             <constraint firstItem="cZ7-Rh-cU7" firstAttribute="leading" secondItem="nNJ-JL-Rtx" secondAttribute="leading" type="default" id="aAb-lm-J8g"/>
-                            <constraint firstItem="gsG-5l-Hq9" firstAttribute="bottom" secondItem="nNJ-JL-Rtx" secondAttribute="bottom" type="default" id="eOe-gk-fIO"/>
                             <constraint firstItem="cZ7-Rh-cU7" firstAttribute="trailing" secondItem="nNJ-JL-Rtx" secondAttribute="trailing" type="default" id="hcZ-3Z-i9P"/>
+                            <constraint firstItem="aJq-jI-xes" firstAttribute="centerX" secondItem="cZ7-Rh-cU7" secondAttribute="centerX" type="default" id="meC-3z-MLn"/>
                             <constraint firstItem="cZ7-Rh-cU7" firstAttribute="top" secondItem="nNJ-JL-Rtx" secondAttribute="top" type="default" id="qzO-dZ-RhF"/>
-                            <constraint firstItem="cZ7-Rh-cU7" firstAttribute="centerX" secondItem="gsG-5l-Hq9" secondAttribute="centerX" type="default" id="zQE-W6-bHa"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="cZ7-Rh-cU7" id="Z9y-O1-8xi"/>
+                        <outlet property="loadingText" destination="aJq-jI-xes" id="7ZN-yO-WPU"/>
+                        <outlet property="view" destination="nNJ-JL-Rtx" id="7z5-lA-zCL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLe-ec-jIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,8 +59,23 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EAVat.gif" width="16" height="16"/>
+        <image name="nyan-cat-white-background.gif" width="500" height="350"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SYNCatViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SYNCatViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loadingText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SYNRootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SYNRootViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -56,6 +56,15 @@
 		F070B16517772AD50027C7BA /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* 1.gif */; };
 		F070B16617772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
 		F070B16717772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
+		F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */; };
+		F070B16A17777EE70027C7BA /* nyan-cat-white-background.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */; };
+		F070B170177798140027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16D177798140027C7BA /* Default-568h@2x.png */; };
+		F070B171177798140027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16D177798140027C7BA /* Default-568h@2x.png */; };
+		F070B172177798140027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16E177798140027C7BA /* Default.png */; };
+		F070B173177798140027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16E177798140027C7BA /* Default.png */; };
+		F070B174177798140027C7BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16F177798140027C7BA /* Default@2x.png */; };
+		F070B175177798140027C7BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16F177798140027C7BA /* Default@2x.png */; };
+		F070B177177798760027C7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B176177798750027C7BA /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +131,11 @@
 		F070B15E1777285A0027C7BA /* Cats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cats.storyboard; sourceTree = "<group>"; };
 		F070B16217772AD50027C7BA /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
 		F070B16317772AD50027C7BA /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "nyan-cat-white-background.gif"; sourceTree = "<group>"; };
+		F070B16D177798140027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F070B16E177798140027C7BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F070B16F177798140027C7BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F070B176177798750027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +169,7 @@
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
+				F070B176177798750027C7BA /* Default-568h@2x.png */,
 				F070AFD9177716330027C7BA /* Cat Streamer */,
 				F070B000177716340027C7BA /* Cat StreamerTests */,
 				F070B011177716650027C7BA /* Submodules */,
@@ -205,6 +220,7 @@
 		F070AFDA177716330027C7BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F070B16B177798140027C7BA /* Assets */,
 				F070B16117772AD50027C7BA /* Cats */,
 				F070B012177716AF0027C7BA /* libTestFlight.a */,
 				F070B013177716AF0027C7BA /* TestFlight.h */,
@@ -277,10 +293,29 @@
 		F070B16117772AD50027C7BA /* Cats */ = {
 			isa = PBXGroup;
 			children = (
+				F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */,
 				F070B16217772AD50027C7BA /* 1.gif */,
 				F070B16317772AD50027C7BA /* 2.gif */,
 			);
 			path = Cats;
+			sourceTree = "<group>";
+		};
+		F070B16B177798140027C7BA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F070B16C177798140027C7BA /* Launchers */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F070B16C177798140027C7BA /* Launchers */ = {
+			isa = PBXGroup;
+			children = (
+				F070B16D177798140027C7BA /* Default-568h@2x.png */,
+				F070B16E177798140027C7BA /* Default.png */,
+				F070B16F177798140027C7BA /* Default@2x.png */,
+			);
+			path = Launchers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +397,11 @@
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
 				F070B16417772AD50027C7BA /* 1.gif in Resources */,
 				F070B16617772AD50027C7BA /* 2.gif in Resources */,
+				F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
+				F070B170177798140027C7BA /* Default-568h@2x.png in Resources */,
+				F070B172177798140027C7BA /* Default.png in Resources */,
+				F070B174177798140027C7BA /* Default@2x.png in Resources */,
+				F070B177177798760027C7BA /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +413,10 @@
 				F070B1601777285A0027C7BA /* Cats.storyboard in Resources */,
 				F070B16517772AD50027C7BA /* 1.gif in Resources */,
 				F070B16717772AD50027C7BA /* 2.gif in Resources */,
+				F070B16A17777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
+				F070B171177798140027C7BA /* Default-568h@2x.png in Resources */,
+				F070B173177798140027C7BA /* Default.png in Resources */,
+				F070B175177798140027C7BA /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +580,7 @@
 					"\"$(SRCROOT)/Cat Streamer\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -551,6 +596,7 @@
 					"\"$(SRCROOT)/Cat Streamer\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

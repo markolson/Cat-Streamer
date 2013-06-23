@@ -19,6 +19,7 @@
 
 @implementation SYNCatViewController
 @synthesize imageView, imageURL, imageData;
+@synthesize loadingText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +33,7 @@
 - (void)imageReady:(NSNotification *)sender
 {
     if([sender object] == imageView) {
+        [loadingText setHidden:YES];
         [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
     };
 }
@@ -39,13 +41,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"EAVat" ofType:@"gif"];  
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"nyan-cat-white-background" ofType:@"gif"];  
     NSData *cat = [NSData dataWithContentsOfFile:filePath];
     [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:cat] ];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
     
     [self loadImage];
+    
+    [loadingText setHidden:NO];
 }
 
 -(void)loadImage {
