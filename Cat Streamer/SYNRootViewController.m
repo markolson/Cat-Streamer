@@ -27,10 +27,7 @@
     self.herder = [[CatHerder alloc] init];
     self.pageViewController.dataSource = self.herder;
     
-
-    [self.herder viewControllerAtIndex:0 storyboard:self.storyboard];
-    
-    SYNCatViewController *catViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Cat"];
+    SYNCatViewController *catViewController = [self.herder viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[catViewController];
     
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationOrientationHorizontal animated:NO completion:NULL];

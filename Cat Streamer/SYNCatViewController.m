@@ -31,8 +31,9 @@
 
 - (void)imageReady:(NSNotification *)sender
 {
-    NSLog(@"image downloaded!");
-    [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
+    if([sender object] == imageView) {
+        [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
+    };
 }
 
 - (void)viewDidLoad
@@ -52,10 +53,13 @@
         NSURL *url = [NSURL URLWithString:self.imageURL];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         NSLog(@"%@", self.imageURL);
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id data) {
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
             imageData = data;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:imageView];
-        } failure:nil];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@", error);
+        }];
         [operation start];
         
     });
