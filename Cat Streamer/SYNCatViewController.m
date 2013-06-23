@@ -30,23 +30,10 @@
     return self;
 }
 
-
-- (void)startPage:(NSNotification *)sender
+- (void)viewWillAppear:(BOOL)animated
 {
-    NSArray *i = (NSArray *)[sender object];
-    if([i count] == 1) {
-        [self setImageURL:[i objectAtIndex:0]];
-        [self loadImage];
-    }
-}
-
-
-- (void)imageReady:(NSNotification *)sender
-{
-    if([sender object] == imageView) {
-        [loadingText setHidden:YES];
-        [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
-    };
+    [super viewWillAppear:animated];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 - (void)viewDidLoad
@@ -57,11 +44,41 @@
     [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:cat] ];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startPage:) name:@"initialImageAvailable" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initialStart:) name:@"initialImageAvailable" object:nil];
     
     [self loadImage];
     
     [loadingText setHidden:NO];
+    
+    UILongPressGestureRecognizer *copytouch = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [copytouch setMinimumPressDuration:1.0];
+    [[self view] addGestureRecognizer:copytouch];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)recognizer {
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+        [self becomeFirstResponder];
+        UIMenuItem *copyImage = [[UIMenuItem alloc] initWithTitle:@"Copy Image" action:@selector(copyImagetoClipboard:)];
+        UIMenuItem *copyLink = [[UIMenuItem alloc] initWithTitle:@"Copy Link" action:@selector(copyLinktoClipboard:)];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+		[menu setMenuItems:[NSArray arrayWithObjects:copyImage, copyLink, nil]];
+		[menu setTargetRect:imageView.frame inView:imageView];
+        [menu setMenuVisible:YES animated:YES];
+	}
+}
+
+- (void)copyLinktoClipboard:(id)sender {
+	[UIPasteboard generalPasteboard].string = self.imageURL;
+}
+
+
+-(void)copyImagetoClipboard:(id)sender {
+    [UIPasteboard generalPasteboard].image = imageView.image;
 }
 
 -(void)loadImage {
@@ -81,10 +98,21 @@
     });
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)initialStart:(NSNotification *)sender
 {
-    [super viewWillAppear:animated];
-    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    NSArray *i = (NSArray *)[sender object];
+    if([i count] == 1) {
+        [self setImageURL:[i objectAtIndex:0]];
+        [self loadImage];
+    }
+}
+
+- (void)imageReady:(NSNotification *)sender
+{
+    if([sender object] == imageView) {
+        [loadingText setHidden:YES];
+        [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
+    };
 }
 
 - (void)didReceiveMemoryWarning
