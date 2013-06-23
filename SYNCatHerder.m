@@ -12,6 +12,12 @@
 
 #define TAGOFFSET 5000
 
+@interface CatHerder() {
+    BOOL _fetchingURLs;
+}
+
+@end
+
 @implementation CatHerder
 
 @synthesize images, pageNumber;
@@ -53,7 +59,24 @@
 }
 
 -(void)fetchList:(NSInteger)count {
+    if(_fetchingURLs) { return; }
     NSLog(@"loading more. %d", [images count]);
-    [self.images addObjectsFromArray:@[@"http://catstreamer.herokuapp.com/images/anigif_enhanced-buzz-3054-1323296351-19.gif", @"http://catstreamer.herokuapp.com/images/cat_face_kick.gif", @"http://catstreamer.herokuapp.com/images/saIOc.jpg", @"http://catstreamer.herokuapp.com/images/SYccw.jpg.gif"]];
+    NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/cats.json"];
+    _fetchingURLs = YES;
+    
+    for(int i = 0; i < count; i++) {
+        AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            // parse 'it
+            NSLog(@"%@", [JSON valueForKey:@"catpic"]);
+            [JSON valueForKey:@"catpic"] ? [self.images addObject:[JSON valueForKey:@"catpic"]] : nil;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"imageAvailable" object:self.images];
+            // clear the block
+            _fetchingURLs = NO;
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            //
+            NSLog(@"failed to download new url");
+        }];
+        [tmpRequest start];
+    }
 }
 @end
