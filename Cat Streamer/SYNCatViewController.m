@@ -53,10 +53,19 @@
     UILongPressGestureRecognizer *copytouch = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [copytouch setMinimumPressDuration:1.0];
     [[self view] addGestureRecognizer:copytouch];
+    [[self view] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quickTap:)]];
 }
 
 - (BOOL)canBecomeFirstResponder {
     return YES;
+}
+
+- (void)quickTap:(UILongPressGestureRecognizer *)recognizer {
+    if (imageView.isAnimating) {
+        [imageView stopAnimating];
+    } else {
+        [imageView startAnimating];
+    }
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)recognizer {
@@ -78,7 +87,7 @@
 
 
 -(void)copyImagetoClipboard:(id)sender {
-    [UIPasteboard generalPasteboard].image = imageData;
+    [[UIPasteboard generalPasteboard] setData:imageData forPasteboardType:@"com.compuserve.gif" ];
 }
 
 -(void)loadImage {
@@ -100,7 +109,7 @@
             imageData = data;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:imageView];
             [TestFlight passCheckpoint:@"gif_loaded"];
-            [imageView setBackgroundColor:[UIColor blackColor]];
+            [self.view setBackgroundColor:[UIColor blackColor]];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);
             [self.loadingText setText:@"THIS KITTEN BROKE D-:"];
