@@ -33,7 +33,7 @@
     SYNCatViewController *catViewController = [self.herder viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[catViewController];
     
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationOrientationHorizontal animated:NO completion:NULL];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
     self.pageViewController.view.frame = self.view.bounds;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];

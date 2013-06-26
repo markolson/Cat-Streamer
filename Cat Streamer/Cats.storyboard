@@ -39,13 +39,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" id="KUe-i9-lJm">
-                                <rect key="frame" x="20" y="511" width="280" height="11"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="progressTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="25" y="510" width="280" height="11"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="progressTintColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <color key="trackTintColor" red="0.074509806931018829" green="0.13725490868091583" blue="0.21176472306251526" alpha="1" colorSpace="deviceRGB"/>
                             </progressView>
                         </subviews>
-                        <color key="backgroundColor" red="0.099124202030841199" green="0.15009967463555784" blue="0.255859375" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.074509806930000005" green="0.13725490870000001" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
