@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01A4038177A91FE00EB77AB /* OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4035177A91FE00EB77AB /* OLImage.m */; };
+		F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4037177A91FE00EB77AB /* OLImageView.m */; };
+		F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A403A177A938F00EB77AB /* QuartzCore.framework */; };
+		F01A403D177A93BD00EB77AB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */; };
 		F070AFD4177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
 		F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
 		F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD7177716330027C7BA /* CoreGraphics.framework */; };
@@ -73,6 +77,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F01A4034177A91FE00EB77AB /* OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImage.h; path = OLImageView/OLImage.h; sourceTree = "<group>"; };
+		F01A4035177A91FE00EB77AB /* OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLImage.m; path = OLImageView/OLImage.m; sourceTree = "<group>"; };
+		F01A4036177A91FE00EB77AB /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImageView.h; path = OLImageView/OLImageView.h; sourceTree = "<group>"; };
+		F01A4037177A91FE00EB77AB /* OLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLImageView.m; path = OLImageView/OLImageView.m; sourceTree = "<group>"; };
+		F01A403A177A938F00EB77AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F070AFD0177716330027C7BA /* Cat Streamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat Streamer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F070AFD3177716330027C7BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F070AFD5177716330027C7BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +137,7 @@
 		F070B16E177798140027C7BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F070B16F177798140027C7BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F070B176177798750027C7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../Default-568h@2x.png"; sourceTree = "<group>"; };
+		F070B1781777DD200027C7BA /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,11 +145,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F01A403D177A93BD00EB77AB /* MobileCoreServices.framework in Frameworks */,
+				F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */,
 				F070B14917771AA10027C7BA /* ImageIO.framework in Frameworks */,
-				F070B017177716CA0027C7BA /* libz.dylib in Frameworks */,
 				F070AFD4177716330027C7BA /* UIKit.framework in Frameworks */,
 				F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */,
 				F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */,
+				F070B017177716CA0027C7BA /* libz.dylib in Frameworks */,
 				F070B014177716AF0027C7BA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +173,7 @@
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
+				F070B1781777DD200027C7BA /* iAd.framework */,
 				F070AFD9177716330027C7BA /* Cat Streamer */,
 				F070B000177716340027C7BA /* Cat StreamerTests */,
 				F070B011177716650027C7BA /* Submodules */,
@@ -180,6 +194,8 @@
 		F070AFD2177716330027C7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */,
+				F01A403A177A938F00EB77AB /* QuartzCore.framework */,
 				F070B14817771AA10027C7BA /* ImageIO.framework */,
 				F070B016177716CA0027C7BA /* libz.dylib */,
 				F070AFD3177716330027C7BA /* UIKit.framework */,
@@ -246,6 +262,10 @@
 			children = (
 				F070B12317771A710027C7BA /* UIImage+animatedGIF.h */,
 				F070B12417771A710027C7BA /* UIImage+animatedGIF.m */,
+				F01A4034177A91FE00EB77AB /* OLImage.h */,
+				F01A4035177A91FE00EB77AB /* OLImage.m */,
+				F01A4036177A91FE00EB77AB /* OLImageView.h */,
+				F01A4037177A91FE00EB77AB /* OLImageView.m */,
 				F070B042177718D30027C7BA /* AFNetworking */,
 			);
 			name = Submodules;
@@ -427,6 +447,7 @@
 			files = (
 				F070AFE0177716330027C7BA /* main.m in Sources */,
 				F070AFE4177716330027C7BA /* SYNAppDelegate.m in Sources */,
+				F01A4038177A91FE00EB77AB /* OLImage.m in Sources */,
 				F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */,
 				F070B0A4177718D40027C7BA /* AFHTTPClient.m in Sources */,
 				F070B0A6177718D40027C7BA /* AFHTTPRequestOperation.m in Sources */,
@@ -439,6 +460,7 @@
 				F070B0B4177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
 				F070B13D17771A710027C7BA /* UIImage+animatedGIF.m in Sources */,
 				F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */,
+				F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */,
 				F070B157177724470027C7BA /* SYNCatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,9 +576,11 @@
 		F070B00C177716340027C7BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Cat Streamer\"",
@@ -570,9 +594,12 @@
 		F070B00D177716340027C7BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: mark olson (3GPLXW6899)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Cat Streamer\"",
@@ -644,6 +671,7 @@
 				F070B00D177716340027C7BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F070B00E177716340027C7BA /* Build configuration list for PBXNativeTarget "Cat StreamerTests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +680,7 @@
 				F070B010177716340027C7BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

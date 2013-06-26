@@ -60,7 +60,7 @@
 }
 
 -(void)fetchList:(NSUInteger)count {
-    if(_fetchingURLs > 0) { return; }
+    if(_fetchingURLs > 0) { NSLog(@"skipping fetch"); return; }
     NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/cats.json"];
     _fetchingURLs += 1;
     
@@ -68,7 +68,9 @@
         AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
             NSLog(@"%@", [JSON valueForKey:@"catpic"]);
             [JSON valueForKey:@"catpic"] ? [self.images addObject:[JSON valueForKey:@"catpic"]] : nil;
-            if([self.images count] == 1) { [[NSNotificationCenter defaultCenter] postNotificationName:@"initialImageAvailable" object:self.images]; }
+            if([self.images count] == 1) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"initialImageAvailable" object:self.images];
+            }
             _fetchingURLs -= 1;
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
             NSLog(@"Uh-oh.");

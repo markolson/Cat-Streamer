@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OLImageView.h"
+#import "OLImage.h"
 
 @interface SYNCatViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet OLImageView *imageView;
 @property (strong, nonatomic) IBOutlet UILabel *loadingText;
+@property (strong, nonatomic) IBOutlet UIProgressView *progress;
+
+
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) NSString *imageURL;
 

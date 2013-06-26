@@ -19,7 +19,7 @@
 
 @implementation SYNCatViewController
 @synthesize imageView, imageURL, imageData;
-@synthesize loadingText;
+@synthesize loadingText, progress;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -78,20 +78,35 @@
 
 
 -(void)copyImagetoClipboard:(id)sender {
-    [UIPasteboard generalPasteboard].image = imageView.image;
+    [UIPasteboard generalPasteboard].image = imageData;
 }
 
 -(void)loadImage {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.progress setHidden:NO];
         NSURL *url = [NSURL URLWithString:self.imageURL];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        NSLog(@"%@", self.imageURL);
+        //NSLog(@"Grabbing %@", self.imageURL);
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+            float sofar = ((float)((int)totalBytesWritten) / (float)((int)totalBytesExpectedToWrite));
+            if(sofar - [self.progress progress] > 0.03) {
+                //NSLog(@"%lld/%lld = %f", totalBytesWritten, totalBytesExpectedToWrite, sofar);
+                [self.progress setProgress:sofar animated:YES];
+            }
+            
+        }];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
             imageData = data;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:imageView];
+            [TestFlight passCheckpoint:@"gif_loaded"];
+            [imageView setBackgroundColor:[UIColor blackColor]];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@", error);
+            [self.loadingText setText:@"THIS KITTEN BROKE D-:"];
+            [self.progress setProgressTintColor:[UIColor redColor]];
+            [self.progress setProgress:1];
+            TFLog(@"GIFAIL on %@: %@", self.imageURL, error);
         }];
         [operation start];
         
@@ -110,8 +125,10 @@
 - (void)imageReady:(NSNotification *)sender
 {
     if([sender object] == imageView) {
+        [self.progress setHidden:YES];
+        [self.progress setProgress:0 animated:NO];
         [loadingText setHidden:YES];
-        [imageView setImage:[UIImage animatedImageWithAnimatedGIFData:imageData] ];
+        [imageView setImage:[OLImage imageWithData:imageData] ];
     };
 }
 

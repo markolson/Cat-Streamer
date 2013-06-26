@@ -7,3 +7,6 @@
 [submodule "uiimage-from-animated-gif"]
 	path = uiimage-from-animated-gif
 	url = https://github.com/mayoff/uiimage-from-animated-gif.git
+[submodule "OLImageView"]
+	path = OLImageView
+	url = https://github.com/ondalabs/OLImageView.git
