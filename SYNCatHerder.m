@@ -60,7 +60,7 @@
 }
 
 -(void)fetchList:(NSUInteger)count {
-    if(_fetchingURLs > 0) { NSLog(@"skipping fetch"); return; }
+    if(_fetchingURLs > 0) { return; }
     NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/cats.json"];
     _fetchingURLs += 1;
     
@@ -73,7 +73,8 @@
             }
             _fetchingURLs -= 1;
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            NSLog(@"Uh-oh.");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"FetchListFailure" object:self.images];
+            TFLog(@"Failed to reach server");
             _fetchingURLs -= 1;
         }];
         [tmpRequest start];

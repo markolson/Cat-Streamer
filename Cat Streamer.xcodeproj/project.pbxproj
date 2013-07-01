@@ -53,10 +53,6 @@
 		F070B158177724470027C7BA /* SYNCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B156177724470027C7BA /* SYNCatViewController.m */; };
 		F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F070B15E1777285A0027C7BA /* Cats.storyboard */; };
 		F070B1601777285A0027C7BA /* Cats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F070B15E1777285A0027C7BA /* Cats.storyboard */; };
-		F070B16417772AD50027C7BA /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* 1.gif */; };
-		F070B16517772AD50027C7BA /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16217772AD50027C7BA /* 1.gif */; };
-		F070B16617772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
-		F070B16717772AD50027C7BA /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16317772AD50027C7BA /* 2.gif */; };
 		F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */; };
 		F070B16A17777EE70027C7BA /* nyan-cat-white-background.gif in Resources */ = {isa = PBXBuildFile; fileRef = F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */; };
 		F070B172177798140027C7BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F070B16E177798140027C7BA /* Default.png */; };
@@ -131,8 +127,6 @@
 		F070B155177724470027C7BA /* SYNCatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNCatViewController.h; sourceTree = "<group>"; };
 		F070B156177724470027C7BA /* SYNCatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNCatViewController.m; sourceTree = "<group>"; };
 		F070B15E1777285A0027C7BA /* Cats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cats.storyboard; sourceTree = "<group>"; };
-		F070B16217772AD50027C7BA /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
-		F070B16317772AD50027C7BA /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
 		F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "nyan-cat-white-background.gif"; sourceTree = "<group>"; };
 		F070B16E177798140027C7BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F070B16F177798140027C7BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -301,8 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				F070B16817777EE70027C7BA /* nyan-cat-white-background.gif */,
-				F070B16217772AD50027C7BA /* 1.gif */,
-				F070B16317772AD50027C7BA /* 2.gif */,
 			);
 			path = Cats;
 			sourceTree = "<group>";
@@ -399,8 +391,6 @@
 			files = (
 				F070AFDE177716330027C7BA /* InfoPlist.strings in Resources */,
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
-				F070B16417772AD50027C7BA /* 1.gif in Resources */,
-				F070B16617772AD50027C7BA /* 2.gif in Resources */,
 				F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
 				F070B172177798140027C7BA /* Default.png in Resources */,
 				F070B174177798140027C7BA /* Default@2x.png in Resources */,
@@ -414,8 +404,6 @@
 			files = (
 				F070B005177716340027C7BA /* InfoPlist.strings in Resources */,
 				F070B1601777285A0027C7BA /* Cats.storyboard in Resources */,
-				F070B16517772AD50027C7BA /* 1.gif in Resources */,
-				F070B16717772AD50027C7BA /* 2.gif in Resources */,
 				F070B16A17777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
 				F070B173177798140027C7BA /* Default.png in Resources */,
 				F070B175177798140027C7BA /* Default@2x.png in Resources */,

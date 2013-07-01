@@ -46,14 +46,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initialStart:) name:@"initialImageAvailable" object:nil];
     
-    [self loadImage];
-    
     [loadingText setHidden:NO];
     
     UILongPressGestureRecognizer *copytouch = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [copytouch setMinimumPressDuration:1.0];
     [[self view] addGestureRecognizer:copytouch];
     [[self view] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quickTap:)]];
+}
+
+-(void)setImageURL:(NSString *)url {
+    imageURL = url;
+    [self loadImage];
 }
 
 - (BOOL)canBecomeFirstResponder {
