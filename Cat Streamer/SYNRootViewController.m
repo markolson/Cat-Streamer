@@ -15,6 +15,8 @@
 
 @implementation SYNRootViewController
 
+@synthesize container;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,9 +36,9 @@
     NSArray *viewControllers = @[catViewController];
     
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
-    self.pageViewController.view.frame = self.view.bounds;
-    [self addChildViewController:self.pageViewController];
-    [self.view addSubview:self.pageViewController.view];
+    [self.pageViewController.view setFrame:[self.container bounds]];
+    [self.container addSubview:self.pageViewController.view];
+    [self.container bringSubviewToFront:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
 }
 

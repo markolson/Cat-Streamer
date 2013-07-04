@@ -11,6 +11,7 @@
 
 @interface SYNRootViewController : UIViewController <UIPageViewControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView *container;
 @property (strong, nonatomic) CatHerder *herder;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
