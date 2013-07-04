@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *progress;
 
 
+@property (nonatomic) bool didAppear;
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) NSString *imageURL;
 

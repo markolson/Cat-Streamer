@@ -13,31 +13,24 @@
 
 
 @interface SYNCatViewController ()
-
 @end
 
 @implementation SYNCatViewController
 @synthesize imageView, imageURL, imageData;
 @synthesize loadingText, progress;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize didAppear;
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+-(void)viewDidAppear:(BOOL)animated {
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    didAppear = true;
+    [self loadImage];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    didAppear = false;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"nyan-cat-white-background" ofType:@"gif"];
     [imageView setImage:[OLImage imageWithContentsOfFile:filePath] ];
     
@@ -56,10 +49,6 @@
 -(void)setImageURL:(NSString *)url {
     imageURL = url;
     [self loadImage];
-}
-
-- (BOOL)canBecomeFirstResponder {
-    return YES;
 }
 
 - (void)quickTap:(UILongPressGestureRecognizer *)recognizer {
@@ -93,17 +82,13 @@
 }
 
 -(void)loadImage {
+    if(!didAppear || !imageURL) { NSLog(@"Not loading yet."); return; }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.progress setHidden:NO];
-        NSURL *url = [NSURL URLWithString:self.imageURL];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];
         [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
             float sofar = ((float)((int)totalBytesWritten) / (float)((int)totalBytesExpectedToWrite));
-            if(sofar - [self.progress progress] > 0.03) {
-                [self.progress setProgress:sofar animated:YES];
-            }
-            
+            [self.progress setProgress:sofar animated:YES];
         }];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
             imageData = data;
@@ -114,17 +99,13 @@
             TFLog(@"GIFAIL on %@: %@", self.imageURL, error);
         }];
         [operation start];
-        
     });
 }
 
 - (void)initialStart:(NSNotification *)sender
 {
     NSArray *i = (NSArray *)[sender object];
-    if([i count] == 1) {
-        [self setImageURL:[i objectAtIndex:0]];
-        [self loadImage];
-    }
+    [self setImageURL:[i objectAtIndex:(5000-self.view.tag)]];
 }
 
 - (void)imageReady:(NSNotification *)sender
