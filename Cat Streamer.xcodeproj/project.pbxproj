@@ -44,8 +44,6 @@
 		F070B0B3177718D40027C7BA /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B056177718D30027C7BA /* AFXMLRequestOperation.m */; };
 		F070B0B4177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B058177718D30027C7BA /* UIImageView+AFNetworking.m */; };
 		F070B0B5177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B058177718D30027C7BA /* UIImageView+AFNetworking.m */; };
-		F070B13D17771A710027C7BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B12417771A710027C7BA /* UIImage+animatedGIF.m */; };
-		F070B13E17771A710027C7BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B12417771A710027C7BA /* UIImage+animatedGIF.m */; };
 		F070B14917771AA10027C7BA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B14817771AA10027C7BA /* ImageIO.framework */; };
 		F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B152177723C30027C7BA /* SYNCatHerder.m */; };
 		F070B154177723C30027C7BA /* SYNCatHerder.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B152177723C30027C7BA /* SYNCatHerder.m */; };
@@ -119,8 +117,6 @@
 		F070B056177718D30027C7BA /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		F070B057177718D30027C7BA /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		F070B058177718D30027C7BA /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		F070B12317771A710027C7BA /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "uiimage-from-animated-gif/uiimage-from-animated-gif/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
-		F070B12417771A710027C7BA /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+animatedGIF.m"; path = "uiimage-from-animated-gif/uiimage-from-animated-gif/UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		F070B14817771AA10027C7BA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		F070B151177723C20027C7BA /* SYNCatHerder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYNCatHerder.h; path = ../SYNCatHerder.h; sourceTree = "<group>"; };
 		F070B152177723C30027C7BA /* SYNCatHerder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYNCatHerder.m; path = ../SYNCatHerder.m; sourceTree = "<group>"; };
@@ -254,8 +250,6 @@
 		F070B011177716650027C7BA /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
-				F070B12317771A710027C7BA /* UIImage+animatedGIF.h */,
-				F070B12417771A710027C7BA /* UIImage+animatedGIF.m */,
 				F01A4034177A91FE00EB77AB /* OLImage.h */,
 				F01A4035177A91FE00EB77AB /* OLImage.m */,
 				F01A4036177A91FE00EB77AB /* OLImageView.h */,
@@ -446,7 +440,6 @@
 				F070B0B0177718D40027C7BA /* AFURLConnectionOperation.m in Sources */,
 				F070B0B2177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
 				F070B0B4177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
-				F070B13D17771A710027C7BA /* UIImage+animatedGIF.m in Sources */,
 				F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */,
 				F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */,
 				F070B157177724470027C7BA /* SYNCatViewController.m in Sources */,
@@ -467,7 +460,6 @@
 				F070B0B1177718D40027C7BA /* AFURLConnectionOperation.m in Sources */,
 				F070B0B3177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
 				F070B0B5177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
-				F070B13E17771A710027C7BA /* UIImage+animatedGIF.m in Sources */,
 				F070B154177723C30027C7BA /* SYNCatHerder.m in Sources */,
 				F070B158177724470027C7BA /* SYNCatViewController.m in Sources */,
 			);
