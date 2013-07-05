@@ -11,6 +11,9 @@
 		F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4037177A91FE00EB77AB /* OLImageView.m */; };
 		F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A403A177A938F00EB77AB /* QuartzCore.framework */; };
 		F01A403D177A93BD00EB77AB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */; };
+		F036D5FA17861DBE00B3560C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B1781777DD200027C7BA /* iAd.framework */; };
+		F036D5FE17862B7100B3560C /* SYNStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F036D5FC17862B7100B3560C /* SYNStatusBarController.m */; };
+		F036D5FF17862B7100B3560C /* SYNStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F036D5FD17862B7100B3560C /* SYNStatusBar.xib */; };
 		F070AFD4177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
 		F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
 		F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD7177716330027C7BA /* CoreGraphics.framework */; };
@@ -77,6 +80,9 @@
 		F01A4037177A91FE00EB77AB /* OLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLImageView.m; path = OLImageView/OLImageView.m; sourceTree = "<group>"; };
 		F01A403A177A938F00EB77AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F036D5FB17862B7100B3560C /* SYNStatusBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNStatusBarController.h; sourceTree = "<group>"; };
+		F036D5FC17862B7100B3560C /* SYNStatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNStatusBarController.m; sourceTree = "<group>"; };
+		F036D5FD17862B7100B3560C /* SYNStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYNStatusBar.xib; sourceTree = "<group>"; };
 		F070AFD0177716330027C7BA /* Cat Streamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat Streamer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F070AFD3177716330027C7BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F070AFD5177716330027C7BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F036D5FA17861DBE00B3560C /* iAd.framework in Frameworks */,
 				F01A403D177A93BD00EB77AB /* MobileCoreServices.framework in Frameworks */,
 				F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */,
 				F070B14917771AA10027C7BA /* ImageIO.framework in Frameworks */,
@@ -163,7 +170,6 @@
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
-				F070B1781777DD200027C7BA /* iAd.framework */,
 				F070AFD9177716330027C7BA /* Cat Streamer */,
 				F070B000177716340027C7BA /* Cat StreamerTests */,
 				F070B011177716650027C7BA /* Submodules */,
@@ -184,6 +190,7 @@
 		F070AFD2177716330027C7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F070B1781777DD200027C7BA /* iAd.framework */,
 				F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */,
 				F01A403A177A938F00EB77AB /* QuartzCore.framework */,
 				F070B14817771AA10027C7BA /* ImageIO.framework */,
@@ -203,12 +210,15 @@
 				F070AFE3177716330027C7BA /* SYNAppDelegate.m */,
 				F070AFEB177716330027C7BA /* SYNRootViewController.h */,
 				F070AFEC177716330027C7BA /* SYNRootViewController.m */,
+				F036D5FB17862B7100B3560C /* SYNStatusBarController.h */,
+				F036D5FC17862B7100B3560C /* SYNStatusBarController.m */,
 				F070B155177724470027C7BA /* SYNCatViewController.h */,
 				F070B156177724470027C7BA /* SYNCatViewController.m */,
 				F070B151177723C20027C7BA /* SYNCatHerder.h */,
 				F070B152177723C30027C7BA /* SYNCatHerder.m */,
 				F070AFDA177716330027C7BA /* Supporting Files */,
 				F070B15E1777285A0027C7BA /* Cats.storyboard */,
+				F036D5FD17862B7100B3560C /* SYNStatusBar.xib */,
 			);
 			path = "Cat Streamer";
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
 				F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
 				F070B172177798140027C7BA /* Default.png in Resources */,
+				F036D5FF17862B7100B3560C /* SYNStatusBar.xib in Resources */,
 				F070B174177798140027C7BA /* Default@2x.png in Resources */,
 				F070B177177798760027C7BA /* Default-568h@2x.png in Resources */,
 			);
@@ -433,6 +444,7 @@
 				F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */,
 				F070B0A4177718D40027C7BA /* AFHTTPClient.m in Sources */,
 				F070B0A6177718D40027C7BA /* AFHTTPRequestOperation.m in Sources */,
+				F036D5FE17862B7100B3560C /* SYNStatusBarController.m in Sources */,
 				F070B0A8177718D40027C7BA /* AFImageRequestOperation.m in Sources */,
 				F070B0AA177718D40027C7BA /* AFJSONRequestOperation.m in Sources */,
 				F070B0AC177718D40027C7BA /* AFNetworkActivityIndicatorManager.m in Sources */,

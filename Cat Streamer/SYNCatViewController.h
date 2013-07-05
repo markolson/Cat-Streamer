@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "OLImageView.h"
 #import "OLImage.h"
+#import "SYNStatusBarController.h"
 
 @interface SYNCatViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet OLImageView *imageView;
-@property (strong, nonatomic) IBOutlet UILabel *loadingText;
-@property (strong, nonatomic) IBOutlet UIProgressView *progress;
-
 
 @property (nonatomic) bool didAppear;
 @property (strong, nonatomic) NSData *imageData;

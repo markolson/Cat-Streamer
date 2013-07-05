@@ -17,7 +17,6 @@
 
 @implementation SYNCatViewController
 @synthesize imageView, imageURL, imageData;
-@synthesize loadingText, progress;
 
 @synthesize didAppear;
 
@@ -36,8 +35,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initialStart:) name:@"initialImageAvailable" object:nil];
-    
-    [loadingText setHidden:NO];
     
     UILongPressGestureRecognizer *copytouch = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [copytouch setMinimumPressDuration:1.0];
@@ -83,19 +80,18 @@
 
 -(void)loadImage {
     if(!didAppear || !imageURL) { NSLog(@"Not loading yet."); return; }
+    if([imageData bytes] > 0 ) { NSLog(@"Already loaded!"); return; } 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"imageLoadStart" object:self.view];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.progress setHidden:NO];
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];
         [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
             float sofar = ((float)((int)totalBytesWritten) / (float)((int)totalBytesExpectedToWrite));
-            [self.progress setProgress:sofar animated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"imagePercentDone" object:[NSNumber numberWithFloat:sofar]];
         }];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
             imageData = data;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:imageView];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [self.loadingText setText:@"THIS KITTEN BROKE D-:"];
-            [self.progress setHidden:YES];
             TFLog(@"GIFAIL on %@: %@", self.imageURL, error);
         }];
         [operation start];
@@ -113,9 +109,6 @@
     if([sender object] == imageView) {
         [TestFlight passCheckpoint:@"gif_loaded"];
         [self.view setBackgroundColor:[UIColor blackColor]];
-        [self.progress setHidden:YES];
-        [self.progress setProgress:0 animated:NO];
-        [loadingText setHidden:YES];
         [imageView setImage:[OLImage imageWithData:imageData] ];
     };
 }

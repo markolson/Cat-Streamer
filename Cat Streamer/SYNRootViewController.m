@@ -15,11 +15,13 @@
 
 @implementation SYNRootViewController
 
-@synthesize container;
+@synthesize box, actions, statusViews, statusBarController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.statusBarController = [[SYNStatusBarController alloc] init];
     
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
@@ -36,11 +38,14 @@
     NSArray *viewControllers = @[catViewController];
     
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
-    [self.pageViewController.view setFrame:[self.container bounds]];
-    [self.container addSubview:self.pageViewController.view];
-    [self.container bringSubviewToFront:self.pageViewController.view];
+    [self.pageViewController.view setFrame:[self.box bounds]];
+    [self.box addSubview:self.pageViewController.view];
+    [self.box bringSubviewToFront:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-}
+    
+    [self.actions addSubview:statusBarController.view];}
+
+
 
 - (void)didReceiveMemoryWarning
 {
