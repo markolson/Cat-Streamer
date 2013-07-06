@@ -55,8 +55,10 @@
         [imageView startAnimating];
     }
 }
+-(BOOL)canBecomeFirstResponder { return YES; }
 
 - (void)longPress:(UILongPressGestureRecognizer *)recognizer {
+    [self becomeFirstResponder];
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self becomeFirstResponder];
         UIMenuItem *copyImage = [[UIMenuItem alloc] initWithTitle:@"Copy Image" action:@selector(copyImagetoClipboard:)];
@@ -64,7 +66,7 @@
         
         UIMenuController *menu = [UIMenuController sharedMenuController];
 		[menu setMenuItems:[NSArray arrayWithObjects:copyImage, copyLink, nil]];
-		[menu setTargetRect:imageView.frame inView:imageView];
+		[menu setTargetRect:self.view.frame inView:self.view];
         [menu setMenuVisible:YES animated:YES];
 	}
 }

@@ -50,7 +50,9 @@
 
 - (SYNCatViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
     NSLog(@"getting view for index %d", index);
-    if([images count] <= index + 5) { [self fetchList:10]; }
+    if([images count] <= index + 5) {
+        [self fetchList:10];
+    }
     if([images count] <= index) { index = 0; }
     
     SYNCatViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Cat"];
@@ -61,24 +63,25 @@
 
 -(void)fetchList:(NSUInteger)count {
     if(_fetchingURLs > 0) { return; }
-    NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/cats.json"];
+    NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/basketofcats"];
     _fetchingURLs += 1;
     
-    for(int i = 0; i < count; i++) {
-        AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            NSLog(@"%@", [JSON valueForKey:@"catpic"]);
-            [JSON valueForKey:@"catpic"] ? [self.images addObject:[JSON valueForKey:@"catpic"]] : nil;
+    AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        for(NSDictionary *d in JSON) {
+            NSLog(@"%@", [d valueForKey:@"catpic"]);
+            [JSON valueForKey:@"catpic"] ? [self.images addObject:[d valueForKey:@"catpic"]] : nil;
             if([self.images count] == 1) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"initialImageAvailable" object:self.images];
             }
-            _fetchingURLs -= 1;
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"FetchListFailure" object:self.images];
-            TFLog(@"Failed to reach server");
-            _fetchingURLs -= 1;
-        }];
-        [tmpRequest start];
-    }
+            
+        }
+        _fetchingURLs -= 1;
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FetchListFailure" object:self.images];
+        TFLog(@"Failed to reach server");
+        _fetchingURLs -= 1;
+    }];
+    [tmpRequest start];
     
 }
 @end
