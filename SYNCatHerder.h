@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Cat.h"
+#import "SYNAppDelegate.h"
 
 @class SYNCatViewController;
 
@@ -18,4 +20,5 @@
 
 @property (strong, nonatomic) NSMutableArray *images;
 @property NSUInteger pageNumber;
+
 @end

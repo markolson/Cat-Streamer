@@ -82,7 +82,11 @@
 
 -(void)loadImage {
     if(!didAppear || !imageURL) { NSLog(@"Not loading yet."); return; }
-    if([imageData bytes] > 0 ) { NSLog(@"Already loaded!"); return; } 
+    if([imageData bytes] > 0 ) { NSLog(@"Already loaded!"); return; }
+    
+    Cat *c = [Cat findOrCreateByUrl:imageURL];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"catAdopted" object:c];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"imageLoadStart" object:self.view];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];

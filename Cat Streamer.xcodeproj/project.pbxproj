@@ -14,6 +14,9 @@
 		F036D5FA17861DBE00B3560C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B1781777DD200027C7BA /* iAd.framework */; };
 		F036D5FE17862B7100B3560C /* SYNStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F036D5FC17862B7100B3560C /* SYNStatusBarController.m */; };
 		F036D5FF17862B7100B3560C /* SYNStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F036D5FD17862B7100B3560C /* SYNStatusBar.xib */; };
+		F036D60217899E7300B3560C /* Basket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F036D60017899E7300B3560C /* Basket.xcdatamodeld */; };
+		F036D6451789A09F00B3560C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F036D6441789A09F00B3560C /* CoreData.framework */; };
+		F036D6481789A59400B3560C /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = F036D6471789A59400B3560C /* Cat.m */; };
 		F070AFD4177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
 		F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
 		F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD7177716330027C7BA /* CoreGraphics.framework */; };
@@ -83,6 +86,10 @@
 		F036D5FB17862B7100B3560C /* SYNStatusBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNStatusBarController.h; sourceTree = "<group>"; };
 		F036D5FC17862B7100B3560C /* SYNStatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNStatusBarController.m; sourceTree = "<group>"; };
 		F036D5FD17862B7100B3560C /* SYNStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYNStatusBar.xib; sourceTree = "<group>"; };
+		F036D60117899E7300B3560C /* Basket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Basket.xcdatamodel; sourceTree = "<group>"; };
+		F036D6441789A09F00B3560C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F036D6461789A59400B3560C /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		F036D6471789A59400B3560C /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 		F070AFD0177716330027C7BA /* Cat Streamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat Streamer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F070AFD3177716330027C7BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F070AFD5177716330027C7BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F036D6451789A09F00B3560C /* CoreData.framework in Frameworks */,
 				F036D5FA17861DBE00B3560C /* iAd.framework in Frameworks */,
 				F01A403D177A93BD00EB77AB /* MobileCoreServices.framework in Frameworks */,
 				F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */,
@@ -190,6 +198,7 @@
 		F070AFD2177716330027C7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F036D6441789A09F00B3560C /* CoreData.framework */,
 				F070B1781777DD200027C7BA /* iAd.framework */,
 				F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */,
 				F01A403A177A938F00EB77AB /* QuartzCore.framework */,
@@ -208,6 +217,8 @@
 			children = (
 				F070AFE2177716330027C7BA /* SYNAppDelegate.h */,
 				F070AFE3177716330027C7BA /* SYNAppDelegate.m */,
+				F036D6461789A59400B3560C /* Cat.h */,
+				F036D6471789A59400B3560C /* Cat.m */,
 				F070AFEB177716330027C7BA /* SYNRootViewController.h */,
 				F070AFEC177716330027C7BA /* SYNRootViewController.m */,
 				F036D5FB17862B7100B3560C /* SYNStatusBarController.h */,
@@ -219,6 +230,7 @@
 				F070AFDA177716330027C7BA /* Supporting Files */,
 				F070B15E1777285A0027C7BA /* Cats.storyboard */,
 				F036D5FD17862B7100B3560C /* SYNStatusBar.xib */,
+				F036D60017899E7300B3560C /* Basket.xcdatamodeld */,
 			);
 			path = "Cat Streamer";
 			sourceTree = "<group>";
@@ -448,9 +460,11 @@
 				F070B0A8177718D40027C7BA /* AFImageRequestOperation.m in Sources */,
 				F070B0AA177718D40027C7BA /* AFJSONRequestOperation.m in Sources */,
 				F070B0AC177718D40027C7BA /* AFNetworkActivityIndicatorManager.m in Sources */,
+				F036D6481789A59400B3560C /* Cat.m in Sources */,
 				F070B0AE177718D40027C7BA /* AFPropertyListRequestOperation.m in Sources */,
 				F070B0B0177718D40027C7BA /* AFURLConnectionOperation.m in Sources */,
 				F070B0B2177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
+				F036D60217899E7300B3560C /* Basket.xcdatamodeld in Sources */,
 				F070B0B4177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
 				F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */,
 				F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */,
@@ -675,6 +689,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F036D60017899E7300B3560C /* Basket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F036D60117899E7300B3560C /* Basket.xcdatamodel */,
+			);
+			currentVersion = F036D60117899E7300B3560C /* Basket.xcdatamodel */;
+			name = Basket.xcdatamodeld;
+			path = ../Basket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F070AFC8177716330027C7BA /* Project object */;
 }

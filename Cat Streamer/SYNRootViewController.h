@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SYNCatHerder.h"
 #import "SYNStatusBarController.h"
+#import "Cat.h"
 
 
 @interface SYNRootViewController : UIViewController <UIPageViewControllerDelegate>
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) SYNStatusBarController *statusBarController;
 
 @property (strong, nonatomic) CatHerder *herder;
+@property (strong, nonatomic) Cat *currentCat;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *statusViews;
 

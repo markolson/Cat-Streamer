@@ -10,6 +10,7 @@
 #import "OLImageView.h"
 #import "OLImage.h"
 #import "SYNStatusBarController.h"
+#import "Cat.h"
 
 @interface SYNCatViewController : UIViewController
 

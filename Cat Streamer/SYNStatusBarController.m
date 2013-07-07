@@ -14,10 +14,12 @@
 
 @implementation SYNStatusBarController
 
-@synthesize toolbar, add, share, progressbar;
+@synthesize toolbar, add, share, progressbar, db;
 
 - (void)viewDidLoad
 {
+    db = UIAppDelegate.managedObjectContext;
+    
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showToolbar:) name:@"imageReady" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showProgressbar:) name:@"imageLoadStart" object:nil];

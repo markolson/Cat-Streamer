@@ -15,7 +15,7 @@
 
 @implementation SYNRootViewController
 
-@synthesize box, actions, statusViews, statusBarController;
+@synthesize box, actions, statusViews, statusBarController, currentCat;
 
 - (void)viewDidLoad
 {
