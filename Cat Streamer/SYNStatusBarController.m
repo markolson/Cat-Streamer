@@ -55,7 +55,9 @@
     [progressbar setProgress:[f floatValue]];
 }
 
-
+-(IBAction)launchFeedback {
+    [TestFlight openFeedbackView];
+}
 
 -(void) added { }
 

@@ -64,9 +64,10 @@
 -(void)fetchList:(NSUInteger)count {
     if(_fetchingURLs > 0) { return; }
     NSString *url = [NSString stringWithFormat:@"http://catstreamer.herokuapp.com/basketofcats"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
     _fetchingURLs += 1;
     
-    AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         for(NSDictionary *d in JSON) {
             NSLog(@"%@", [d valueForKey:@"catpic"]);
             [JSON valueForKey:@"catpic"] ? [self.images addObject:[d valueForKey:@"catpic"]] : nil;

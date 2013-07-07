@@ -21,7 +21,7 @@
                     <rect key="frame" x="0.0" y="6" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem systemItem="add" id="drH-lb-AaB">
+                        <barButtonItem enabled="NO" systemItem="add" id="drH-lb-AaB">
                             <connections>
                                 <action selector="added" destination="-1" id="SoI-yn-1rf"/>
                             </connections>
@@ -29,12 +29,17 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Gsr-3M-CG1"/>
                         <barButtonItem style="plain" id="Xyk-wD-y4a">
                             <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="Gvt-bR-23B">
-                                <rect key="frame" x="66" y="21" width="187" height="2"/>
+                                <rect key="frame" x="57" y="21" width="120" height="2"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </progressView>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="3BM-XY-oo3"/>
-                        <barButtonItem width="50" systemItem="action" id="mFZ-bN-rr0">
+                        <barButtonItem title="Feedback" id="dBH-pH-If1">
+                            <connections>
+                                <action selector="launchFeedback" destination="-1" id="av7-MH-LF5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem enabled="NO" width="50" systemItem="action" id="mFZ-bN-rr0">
                             <connections>
                                 <action selector="shared" destination="-1" id="08P-dY-oOF"/>
                             </connections>
@@ -45,4 +50,17 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <classes>
+        <class className="SYNStatusBarController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SYNStatusBarController.h"/>
+            <relationships>
+                <relationship kind="action" name="added"/>
+                <relationship kind="action" name="shared"/>
+                <relationship kind="outlet" name="add" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="progressbar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="share" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+    </classes>
 </document>
