@@ -49,7 +49,6 @@
 }
 
 - (SYNCatViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
-    NSLog(@"getting view for index %d", index);
     if([images count] <= index + 5) {
         [self fetchList:10];
     }
@@ -69,7 +68,6 @@
     
     AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         for(NSDictionary *d in JSON) {
-            NSLog(@"%@", [d valueForKey:@"catpic"]);
             [JSON valueForKey:@"catpic"] ? [self.images addObject:[d valueForKey:@"catpic"]] : nil;
             if([self.images count] == 1) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"initialImageAvailable" object:self.images];

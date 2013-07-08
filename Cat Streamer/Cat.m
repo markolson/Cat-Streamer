@@ -41,8 +41,6 @@
     }
     NSError *error;
     [UIAppDelegate.managedObjectContext save:&error];
-    NSLog(@"Cat %@ %@", c, error);
-    
     return c;
 }
 

@@ -17,6 +17,7 @@
 		F036D60217899E7300B3560C /* Basket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F036D60017899E7300B3560C /* Basket.xcdatamodeld */; };
 		F036D6451789A09F00B3560C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F036D6441789A09F00B3560C /* CoreData.framework */; };
 		F036D6481789A59400B3560C /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = F036D6471789A59400B3560C /* Cat.m */; };
+		F036D64C178A160600B3560C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F036D64B178A160600B3560C /* MBProgressHUD.m */; };
 		F070AFD4177716330027C7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD3177716330027C7BA /* UIKit.framework */; };
 		F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
 		F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD7177716330027C7BA /* CoreGraphics.framework */; };
@@ -90,6 +91,8 @@
 		F036D6441789A09F00B3560C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F036D6461789A59400B3560C /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		F036D6471789A59400B3560C /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		F036D64A178A15F800B3560C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F036D64B178A160600B3560C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F070AFD0177716330027C7BA /* Cat Streamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cat Streamer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F070AFD3177716330027C7BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F070AFD5177716330027C7BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +178,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F036D649178A15DF00B3560C /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F036D64A178A15F800B3560C /* MBProgressHUD.h */,
+				F036D64B178A160600B3560C /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		F070AFC7177716330027C7BA = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +284,7 @@
 		F070B011177716650027C7BA /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				F036D649178A15DF00B3560C /* MBProgressHUD */,
 				F01A4034177A91FE00EB77AB /* OLImage.h */,
 				F01A4035177A91FE00EB77AB /* OLImage.m */,
 				F01A4036177A91FE00EB77AB /* OLImageView.h */,
@@ -457,6 +470,7 @@
 				F070B0A4177718D40027C7BA /* AFHTTPClient.m in Sources */,
 				F070B0A6177718D40027C7BA /* AFHTTPRequestOperation.m in Sources */,
 				F036D5FE17862B7100B3560C /* SYNStatusBarController.m in Sources */,
+				F036D64C178A160600B3560C /* MBProgressHUD.m in Sources */,
 				F070B0A8177718D40027C7BA /* AFImageRequestOperation.m in Sources */,
 				F070B0AA177718D40027C7BA /* AFJSONRequestOperation.m in Sources */,
 				F070B0AC177718D40027C7BA /* AFNetworkActivityIndicatorManager.m in Sources */,

@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "SYNAppDelegate.h"
+#import "SYNCatViewController.h"
+#import "MBProgressHUD.h"
 
 @interface SYNStatusBarController : UIViewController
 
 @property UIToolbar IBOutlet *toolbar;
 @property UIProgressView IBOutlet *progressbar;
-@property UIBarButtonItem IBOutlet *add;
+@property UIBarButtonItem IBOutlet *favorite;
 @property UIBarButtonItem IBOutlet *share;
 
-@property (nonatomic, retain) NSManagedObjectContext *db;
+@property (strong, nonatomic) SYNCatViewController *activeController;
+@property (nonatomic, retain) Cat *activeCat;
 
--(IBAction) added;
+-(IBAction) favorited;
 -(IBAction) shared;
 @end

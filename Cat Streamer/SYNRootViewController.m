@@ -42,10 +42,15 @@
     [self.box addSubview:self.pageViewController.view];
     [self.box bringSubviewToFront:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    [self.actions addSubview:statusBarController.view];
     
-    [self.actions addSubview:statusBarController.view];}
+}
 
-
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if(completed) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"catChangedTo" object:((SYNCatViewController *)pageViewController.viewControllers[0])];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

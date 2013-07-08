@@ -16,9 +16,9 @@
 @end
 
 @implementation SYNCatViewController
-@synthesize imageView, imageURL, imageData;
+@synthesize imageView, imageURL, imageData, cat;
 
-@synthesize didAppear;
+@synthesize didAppear, loaded;
 
 -(void)viewDidAppear:(BOOL)animated {
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -80,25 +80,31 @@
     [[UIPasteboard generalPasteboard] setData:imageData forPasteboardType:@"com.compuserve.gif" ];
 }
 
+-(bool)isLoaded {
+    return loaded;
+}
+
 -(void)loadImage {
     if(!didAppear || !imageURL) { NSLog(@"Not loading yet."); return; }
-    if([imageData bytes] > 0 ) { NSLog(@"Already loaded!"); return; }
-    
-    Cat *c = [Cat findOrCreateByUrl:imageURL];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"catAdopted" object:c];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"imageLoadStart" object:self.view];
+    if([imageData bytes] > 0) { NSLog(@"Already load{ed,ing}!"); return; }
+    loaded = NO;
+    cat = [Cat findOrCreateByUrl:imageURL];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"imageLoadStart" object:self];
+        float last_sofar = 0.0;
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];
         [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
             float sofar = ((float)((int)totalBytesWritten) / (float)((int)totalBytesExpectedToWrite));
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"imagePercentDone" object:[NSNumber numberWithFloat:sofar]];
+            if(sofar - last_sofar >= 0.05 || sofar > 0.99) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"imagePercentDone" object:@{@"controller":self, @"percent": [NSNumber numberWithFloat:sofar]}];
+            }
         }];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
             imageData = data;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:imageView];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             TFLog(@"GIFAIL on %@: %@", self.imageURL, error);
+            loaded = true;
         }];
         [operation start];
     });
@@ -112,8 +118,9 @@
 
 - (void)imageReady:(NSNotification *)sender
 {
-    if([sender object] == imageView) {
-        [TestFlight passCheckpoint:@"gif_loaded"];
+    if([sender object] == self) {
+        loaded = YES;
+        //[TestFlight passCheckpoint:@"gif_loaded"];
         [self.view setBackgroundColor:[UIColor blackColor]];
         [imageView setImage:[OLImage imageWithData:imageData] ];
     };
