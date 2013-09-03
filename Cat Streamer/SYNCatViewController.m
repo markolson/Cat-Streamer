@@ -16,7 +16,7 @@
 @end
 
 @implementation SYNCatViewController
-@synthesize imageView, imageURL, imageData, cat;
+@synthesize imageView, imageURL, imageData;
 
 @synthesize didAppear, loaded;
 
@@ -87,10 +87,9 @@
 -(void)loadImage {
     if(!didAppear || !imageURL) { NSLog(@"Not loading yet."); return; }
     if([imageData bytes] > 0) { NSLog(@"Already load{ed,ing}!"); return; }
-    loaded = NO;
-    cat = [Cat findOrCreateByUrl:imageURL];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"imageLoadStart" object:self];
+        loaded = NO;
         float last_sofar = 0.0;
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];
         [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
@@ -104,7 +103,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             TFLog(@"GIFAIL on %@: %@", self.imageURL, error);
-            loaded = true;
+            loaded = YES;
         }];
         [operation start];
     });
@@ -120,7 +119,6 @@
 {
     if([sender object] == self) {
         loaded = YES;
-        //[TestFlight passCheckpoint:@"gif_loaded"];
         [self.view setBackgroundColor:[UIColor blackColor]];
         [imageView setImage:[OLImage imageWithData:imageData] ];
     };

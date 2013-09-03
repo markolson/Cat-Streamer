@@ -78,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D2F81A017D4109600158624 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		4D2F81A117D4109600158624 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		F01A4034177A91FE00EB77AB /* OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImage.h; path = OLImageView/OLImage.h; sourceTree = "<group>"; };
 		F01A4035177A91FE00EB77AB /* OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLImage.m; path = OLImageView/OLImage.m; sourceTree = "<group>"; };
 		F01A4036177A91FE00EB77AB /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImageView.h; path = OLImageView/OLImageView.h; sourceTree = "<group>"; };
@@ -254,6 +256,8 @@
 				F070B16117772AD50027C7BA /* Cats */,
 				F070B012177716AF0027C7BA /* libTestFlight.a */,
 				F070B013177716AF0027C7BA /* TestFlight.h */,
+				4D2F81A017D4109600158624 /* TestFlight+AsyncLogging.h */,
+				4D2F81A117D4109600158624 /* TestFlight+ManualSessions.h */,
 				F070AFDB177716330027C7BA /* Cat Streamer-Info.plist */,
 				F070AFDC177716330027C7BA /* InfoPlist.strings */,
 				F070AFDF177716330027C7BA /* main.m */,
@@ -394,6 +398,11 @@
 				CLASSPREFIX = SYN;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Mark Olson";
+				TargetAttributes = {
+					F070AFCF177716330027C7BA = {
+						DevelopmentTeam = 3GPLXW6899;
+					};
+				};
 			};
 			buildConfigurationList = F070AFCB177716330027C7BA /* Build configuration list for PBXProject "Cat Streamer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -597,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
@@ -606,6 +616,7 @@
 					"\"$(SRCROOT)/Cat Streamer\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E34E14DB-9477-4DEA-BB59-489824143952";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -614,7 +625,7 @@
 		F070B00D177716340027C7BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: mark olson (3GPLXW6899)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: mark olson (3GPLXW6899)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
@@ -625,6 +636,7 @@
 					"\"$(SRCROOT)/Cat Streamer\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E34E14DB-9477-4DEA-BB59-489824143952";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

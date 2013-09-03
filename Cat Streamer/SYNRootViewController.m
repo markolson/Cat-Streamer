@@ -43,6 +43,7 @@
     [self.box bringSubviewToFront:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     [self.actions addSubview:statusBarController.view];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"catChangedTo" object:((SYNCatViewController *)self.pageViewController.viewControllers[0])];
     
 }
 

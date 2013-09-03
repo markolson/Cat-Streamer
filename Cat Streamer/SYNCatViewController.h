@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "OLImageView.h"
 #import "OLImage.h"
-#import "Cat.h"
 
 @interface SYNCatViewController : UIViewController
 
@@ -19,8 +18,6 @@
 @property (nonatomic) bool loaded;
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) NSString *imageURL;
-
-@property (strong, nonatomic) Cat *cat;
 
 -(bool)isLoaded;
 @end

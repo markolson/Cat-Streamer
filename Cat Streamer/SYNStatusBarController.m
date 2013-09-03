@@ -20,7 +20,6 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeView:) name:@"catChangedTo" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeView:) name:@"imageLoadStart" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress:) name:@"imagePercentDone" object:nil];
     
@@ -39,7 +38,6 @@
 - (void)changeView:(NSNotification *)sender
 {
     activeController = (SYNCatViewController *)[sender object];
-    activeCat = activeController.cat;
     NSLog(@"Active is now %d (%d)", activeController.view.tag - 5000, activeController.isLoaded);
     if(activeController.isLoaded == NO) {
         NSLog(@"Showing bar for %d", activeController.view.tag - 5000);
@@ -53,6 +51,7 @@
 }
 
 -(void) loadComplete {
+    activeCat = [Cat findOrCreateByUrl:activeController.imageURL];
     [progressbar setHidden:YES];
     [favorite setEnabled:YES];
     [self toggleFavorite];
@@ -74,12 +73,6 @@
         }
     }
 
-}
-
-
-
--(IBAction)launchFeedback {
-    [TestFlight openFeedbackView];
 }
 
 -(void) favorited {
