@@ -16,7 +16,7 @@
 @end
 
 @implementation SYNCatViewController
-@synthesize imageView, imageURL, imageData;
+@synthesize imageView, imageURL, imageData, shortCode;
 
 @synthesize didAppear, loaded;
 
@@ -34,7 +34,6 @@
     [imageView setImage:[OLImage imageWithContentsOfFile:filePath] ];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initialStart:) name:@"initialImageAvailable" object:nil];
     
     UILongPressGestureRecognizer *copytouch = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [copytouch setMinimumPressDuration:1.0];
@@ -49,6 +48,8 @@
 }
 
 - (void)quickTap:(UILongPressGestureRecognizer *)recognizer {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showActionBar" object:@{@"controller":self}];
+    return;
     if (imageView.isAnimating) {
         [imageView stopAnimating];
     } else {
@@ -89,6 +90,7 @@
     if([imageData bytes] > 0) { NSLog(@"Already load{ed,ing}!"); return; }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Starting! %@", imageURL);
         loaded = NO;
         float last_sofar = 0.0;
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];
@@ -99,20 +101,17 @@
             }
         }];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
+            imageURL = [[[request response] URL] absoluteString];
+            NSLog(@"DONE! %@",[imageURL lastPathComponent]);
             imageData = data;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            TFLog(@"GIFAIL on %@: %@", self.imageURL, error);
+            TFLog(@"GIFAIL on %@", self.imageURL);
             loaded = YES;
+            
         }];
         [operation start];
     });
-}
-
-- (void)initialStart:(NSNotification *)sender
-{
-    NSArray *i = (NSArray *)[sender object];
-    [self setImageURL:[i objectAtIndex:(5000-self.view.tag)]];
 }
 
 - (void)imageReady:(NSNotification *)sender

@@ -14,7 +14,7 @@
 
 @implementation SYNStatusBarController
 
-@synthesize toolbar, favorite, share, progressbar, activeCat, activeController;
+@synthesize toolbar, favorite, share, progressbar, activeCat, activeController, hider;
 
 - (void)viewDidLoad
 {
@@ -23,6 +23,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress:) name:@"imagePercentDone" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadComplete) name:@"imageReady" object:nil];
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleBar:) name:@"showActionBar" object:nil];
     if ([[[UIDevice currentDevice] systemVersion] compare:@"7" options:NSNumericSearch] != NSOrderedAscending) {
     }else{
         [toolbar setTranslucent:YES];
@@ -35,16 +38,46 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)resetFrame {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    [self toggleFavorite];
+    CGRect tf = toolbar.frame;
+    tf.origin.y = 8;
+    toolbar.frame = tf;
+    [UIView commitAnimations];
+}
+
+- (void) dropFrame {
+    [self toggleFavorite];
+    CGRect tf = toolbar.frame;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:0.4];
+    tf.origin.y = tf.size.height;
+    toolbar.frame = tf;
+    [UIView commitAnimations];
+}
+
+- (void)toggleBar:(NSNotification *)sender
+{
+    [self resetFrame];
+    [hider invalidate];
+    hider = [NSTimer timerWithTimeInterval:3 block:^(NSTimer *t){
+        [self dropFrame];
+    } repeats:NO];
+    [[NSRunLoop mainRunLoop] addTimer:hider forMode:NSDefaultRunLoopMode];
+}
+
 - (void)changeView:(NSNotification *)sender
 {
+    [hider invalidate];
     activeController = (SYNCatViewController *)[sender object];
-    NSLog(@"Active is now %d (%d)", activeController.view.tag - 5000, activeController.isLoaded);
     if(activeController.isLoaded == NO) {
-        NSLog(@"Showing bar for %d", activeController.view.tag - 5000);
         [progressbar setProgress:0];
         [progressbar setHidden:NO];
-        [favorite setEnabled:NO];
         [self toggleFavorite];
+        [self resetFrame];
     }else{
         [self loadComplete];
     }
@@ -53,7 +86,7 @@
 -(void) loadComplete {
     activeCat = [Cat findOrCreateByUrl:activeController.imageURL];
     [progressbar setHidden:YES];
-    [favorite setEnabled:YES];
+    [self dropFrame];
     [self toggleFavorite];
 }
 
@@ -66,11 +99,6 @@
     {
         if([f floatValue] <= [progressbar progress]) { return; }
         [progressbar setProgress:[f floatValue]];
-        //NSLog(@"Updating Progress %f For %d [%d]", [f floatValue], activeController.view.tag - 5000, controller.view.tag);
-        if([f floatValue] == 1.0) {
-            NSLog(@"progress based load complete for %d", activeController.view.tag - 5000);
-            [self loadComplete];
-        }
     }
 
 }
@@ -88,11 +116,13 @@
 }
 
 - (void)toggleFavorite {
+    
+    [favorite setEnabled:activeController.isLoaded];
     if(activeCat.favorited.boolValue == YES)
     {
         [favorite setStyle:UIBarButtonItemStyleDone];
         if ([[[UIDevice currentDevice] systemVersion] compare:@"7" options:NSNumericSearch] != NSOrderedAscending) {
-            [favorite setTintColor:[UIColor magentaColor]];
+            [favorite setTintColor:[UIColor whiteColor]];
         }
     }else{
         [favorite setStyle:UIBarButtonItemStyleBordered];

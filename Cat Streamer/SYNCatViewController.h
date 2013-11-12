@@ -18,6 +18,7 @@
 @property (nonatomic) bool loaded;
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) NSString *imageURL;
+@property (strong, nonatomic) NSString *shortCode;
 
 -(bool)isLoaded;
 @end

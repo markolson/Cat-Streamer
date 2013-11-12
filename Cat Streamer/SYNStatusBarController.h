@@ -10,6 +10,7 @@
 #import "SYNAppDelegate.h"
 #import "SYNCatViewController.h"
 #import "MBProgressHUD.h"
+#import "NSTimer+Blocks.h"
 
 @interface SYNStatusBarController : UIViewController
 
@@ -17,6 +18,8 @@
 @property UIProgressView IBOutlet *progressbar;
 @property UIBarButtonItem IBOutlet *favorite;
 @property UIBarButtonItem IBOutlet *share;
+
+@property (nonatomic, retain) NSTimer *hider;
 
 @property (strong, nonatomic) SYNCatViewController *activeController;
 @property (nonatomic, retain) Cat *activeCat;

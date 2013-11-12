@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D08AE2E17D5882700231594 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE2D17D5882700231594 /* Images.xcassets */; };
+		4D08AE3617D589ED00231594 /* nyancon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE3517D589ED00231594 /* nyancon@2x.jpg */; };
+		4D08AE3817D58A0B00231594 /* nyancon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE3717D58A0B00231594 /* nyancon@2x.png */; };
+		4D08AE3A17D58A3600231594 /* nyancon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE3917D58A3600231594 /* nyancon.png */; };
+		4D08AE3C17D58A5800231594 /* nyancon-b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE3B17D58A5800231594 /* nyancon-b@2x.png */; };
+		4D62DD1317D56F86009B65B3 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D62DD1217D56F86009B65B3 /* NSTimer+Blocks.m */; };
 		F01A4038177A91FE00EB77AB /* OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4035177A91FE00EB77AB /* OLImage.m */; };
 		F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4037177A91FE00EB77AB /* OLImageView.m */; };
 		F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A403A177A938F00EB77AB /* QuartzCore.framework */; };
@@ -78,8 +84,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D08AE2D17D5882700231594 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4D08AE3517D589ED00231594 /* nyancon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nyancon@2x.jpg"; sourceTree = "<group>"; };
+		4D08AE3717D58A0B00231594 /* nyancon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nyancon@2x.png"; sourceTree = "<group>"; };
+		4D08AE3917D58A3600231594 /* nyancon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyancon.png; sourceTree = "<group>"; };
+		4D08AE3B17D58A5800231594 /* nyancon-b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nyancon-b@2x.png"; sourceTree = "<group>"; };
 		4D2F81A017D4109600158624 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		4D2F81A117D4109600158624 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		4D62DD1117D56F86009B65B3 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		4D62DD1217D56F86009B65B3 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
 		F01A4034177A91FE00EB77AB /* OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImage.h; path = OLImageView/OLImage.h; sourceTree = "<group>"; };
 		F01A4035177A91FE00EB77AB /* OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLImage.m; path = OLImageView/OLImage.m; sourceTree = "<group>"; };
 		F01A4036177A91FE00EB77AB /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImageView.h; path = OLImageView/OLImageView.h; sourceTree = "<group>"; };
@@ -245,6 +258,7 @@
 				F070B15E1777285A0027C7BA /* Cats.storyboard */,
 				F036D5FD17862B7100B3560C /* SYNStatusBar.xib */,
 				F036D60017899E7300B3560C /* Basket.xcdatamodeld */,
+				4D08AE2D17D5882700231594 /* Images.xcassets */,
 			);
 			path = "Cat Streamer";
 			sourceTree = "<group>";
@@ -294,6 +308,8 @@
 				F01A4036177A91FE00EB77AB /* OLImageView.h */,
 				F01A4037177A91FE00EB77AB /* OLImageView.m */,
 				F070B042177718D30027C7BA /* AFNetworking */,
+				4D62DD1117D56F86009B65B3 /* NSTimer+Blocks.h */,
+				4D62DD1217D56F86009B65B3 /* NSTimer+Blocks.m */,
 			);
 			name = Submodules;
 			sourceTree = "<group>";
@@ -335,6 +351,10 @@
 		F070B16B177798140027C7BA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4D08AE3B17D58A5800231594 /* nyancon-b@2x.png */,
+				4D08AE3917D58A3600231594 /* nyancon.png */,
+				4D08AE3717D58A0B00231594 /* nyancon@2x.png */,
+				4D08AE3517D589ED00231594 /* nyancon@2x.jpg */,
 				F070B16C177798140027C7BA /* Launchers */,
 			);
 			path = Assets;
@@ -428,11 +448,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F070AFDE177716330027C7BA /* InfoPlist.strings in Resources */,
+				4D08AE3817D58A0B00231594 /* nyancon@2x.png in Resources */,
+				4D08AE3A17D58A3600231594 /* nyancon.png in Resources */,
+				4D08AE2E17D5882700231594 /* Images.xcassets in Resources */,
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
 				F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
+				4D08AE3C17D58A5800231594 /* nyancon-b@2x.png in Resources */,
 				F070B172177798140027C7BA /* Default.png in Resources */,
 				F036D5FF17862B7100B3560C /* SYNStatusBar.xib in Resources */,
 				F070B174177798140027C7BA /* Default@2x.png in Resources */,
+				4D08AE3617D589ED00231594 /* nyancon@2x.jpg in Resources */,
 				F070B177177798760027C7BA /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +509,7 @@
 				F070B0AA177718D40027C7BA /* AFJSONRequestOperation.m in Sources */,
 				F070B0AC177718D40027C7BA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				F036D6481789A59400B3560C /* Cat.m in Sources */,
+				4D62DD1317D56F86009B65B3 /* NSTimer+Blocks.m in Sources */,
 				F070B0AE177718D40027C7BA /* AFPropertyListRequestOperation.m in Sources */,
 				F070B0B0177718D40027C7BA /* AFURLConnectionOperation.m in Sources */,
 				F070B0B2177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
@@ -605,8 +631,9 @@
 		F070B00C177716340027C7BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
@@ -616,7 +643,7 @@
 					"\"$(SRCROOT)/Cat Streamer\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E34E14DB-9477-4DEA-BB59-489824143952";
+				PROVISIONING_PROFILE = "B1B26C38-D316-4AC0-B5C6-78D8E2D73DFF";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -625,6 +652,7 @@
 		F070B00D177716340027C7BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: mark olson (3GPLXW6899)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: mark olson (3GPLXW6899)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -636,7 +664,7 @@
 					"\"$(SRCROOT)/Cat Streamer\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E34E14DB-9477-4DEA-BB59-489824143952";
+				PROVISIONING_PROFILE = "B1B26C38-D316-4AC0-B5C6-78D8E2D73DFF";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

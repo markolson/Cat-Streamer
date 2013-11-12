@@ -15,6 +15,7 @@
 @interface CatHerder() {
     int _fetchingURLs;
     int relativeOffset;
+    NSMutableDictionary *catz;
 }
 
 @end
@@ -25,12 +26,13 @@
 
 - (id)init
 {
+    catz = [[NSMutableDictionary alloc] initWithCapacity:10];
     self = [super init];
     if (self) {
         // Create the data model.
         self.images = [NSMutableArray array];
     }
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageReady:) name:@"imageReady" object:nil];
     return self;
 }
 
@@ -44,43 +46,26 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     int t = (viewController.view.tag - TAGOFFSET) + 1;
-    if(t >= [images count]) { return nil; }
     return [self viewControllerAtIndex:t storyboard:viewController.storyboard];;
 }
 
 - (SYNCatViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
-    if([images count] <= index + 5) {
-        [self fetchList:10];
-    }
-    if([images count] <= index) { index = 0; }
-    
     SYNCatViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Cat"];
-    vc.view.tag = 5000 + index;
-    if([images count] > 0) { vc.imageURL = [images objectAtIndex:index]; }
+    vc.view.tag = TAGOFFSET + index;
+    NSNumber *n = [NSNumber numberWithInt:(vc.view.tag - TAGOFFSET)];
+    if ([[catz allKeys] containsObject:n]) {
+        NSLog(@"Setting %d's imageURL to %@.", index, [catz objectForKey:n]);
+        vc.imageURL = [NSString stringWithFormat:@"http://localhost:8080/meow/%@", [catz objectForKey:n]];
+    }else{
+        NSLog(@"Setting %d's imageURL to meow.", index);
+        vc.imageURL = @"http://localhost:8080/meow";
+    }
     return vc;
 }
 
--(void)fetchList:(NSUInteger)count {
-    if(_fetchingURLs > 0) { return; }
-    NSString *url = [NSString stringWithFormat:@"http://cutestreamer.herokuapp.com/multi"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
-    _fetchingURLs += 1;
-    
-    AFJSONRequestOperation *tmpRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        for(NSDictionary *d in JSON) {
-            [JSON valueForKey:@"catpic"] ? [self.images addObject:[d valueForKey:@"catpic"]] : nil;
-            if([self.images count] == 1) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"initialImageAvailable" object:self.images];
-            }
-            
-        }
-        _fetchingURLs -= 1;
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"FetchListFailure" object:self.images];
-        TFLog(@"Failed to reach server oh goooddddd");
-        _fetchingURLs -= 1;
-    }];
-    [tmpRequest start];
-    
+- (void)imageReady:(NSNotification *)sender
+{
+    SYNCatViewController *c = (SYNCatViewController *)[sender object];
+    [catz setObject:[[NSURL URLWithString:c.imageURL] lastPathComponent] forKey:[NSNumber numberWithInt:(c.view.tag - TAGOFFSET)]];
 }
 @end

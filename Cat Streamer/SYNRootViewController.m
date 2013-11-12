@@ -20,7 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.statusBarController = [[SYNStatusBarController alloc] init];
     
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -29,7 +28,6 @@
     // create the cat herder, our UIPageViewControllerDataSource and assign it as the datasource
     // for the page controller
     self.herder = [[CatHerder alloc] init];
-    [self.herder fetchList:2];
     self.pageViewController.dataSource = self.herder;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(advancePage:) name:@"pageViewAdvanceRequest" object:nil];
@@ -42,6 +40,7 @@
     [self.box addSubview:self.pageViewController.view];
     [self.box bringSubviewToFront:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
     [self.actions addSubview:statusBarController.view];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"catChangedTo" object:((SYNCatViewController *)self.pageViewController.viewControllers[0])];
     

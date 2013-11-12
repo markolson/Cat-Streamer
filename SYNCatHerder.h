@@ -16,7 +16,6 @@
 @interface CatHerder : NSObject <UIPageViewControllerDataSource>
 
 - (SYNCatViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
-- (void)fetchList:(NSUInteger)count;
 
 @property (strong, nonatomic) NSMutableArray *images;
 @property NSUInteger pageNumber;
