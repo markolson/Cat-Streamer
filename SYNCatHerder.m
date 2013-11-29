@@ -54,11 +54,9 @@
     vc.view.tag = TAGOFFSET + index;
     NSNumber *n = [NSNumber numberWithInt:(vc.view.tag - TAGOFFSET)];
     if ([[catz allKeys] containsObject:n]) {
-        NSLog(@"Setting %d's imageURL to %@.", index, [catz objectForKey:n]);
-        vc.imageURL = [NSString stringWithFormat:@"http://localhost:8080/meow/%@", [catz objectForKey:n]];
+        vc.imageURL = [NSString stringWithFormat:@"http://cutestreamer.herokuapp.com/meow/%@", [catz objectForKey:n]];
     }else{
-        NSLog(@"Setting %d's imageURL to meow.", index);
-        vc.imageURL = @"http://localhost:8080/meow";
+        vc.imageURL = @"http://cutestreamer.herokuapp.com/meow";
     }
     return vc;
 }
@@ -66,6 +64,7 @@
 - (void)imageReady:(NSNotification *)sender
 {
     SYNCatViewController *c = (SYNCatViewController *)[sender object];
+    NSLog(@"set %@", [[NSURL URLWithString:c.imageURL] lastPathComponent]);
     [catz setObject:[[NSURL URLWithString:c.imageURL] lastPathComponent] forKey:[NSNumber numberWithInt:(c.view.tag - TAGOFFSET)]];
 }
 @end

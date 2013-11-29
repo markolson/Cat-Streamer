@@ -19,6 +19,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:100 * 1024 * 1024
+                                                         diskCapacity:100 * 1024 * 1024
+                                                             diskPath:nil];
+    
+    [NSURLCache setSharedURLCache:URLCache];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
      //[TestFlight setDeviceIdentifier:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
     [TestFlight takeOff:@"8719a52f-2d62-4e0f-8762-b159b0526e5d"];
     return YES;

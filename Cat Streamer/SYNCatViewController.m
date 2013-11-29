@@ -93,16 +93,43 @@
         NSLog(@"Starting! %@", imageURL);
         loaded = NO;
         float last_sofar = 0.0;
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL]]];
+        NSLog(@"cache size: %d of %d | %d of %d", [[NSURLCache sharedURLCache] currentMemoryUsage], [[NSURLCache sharedURLCache] currentMemoryUsage], [[NSURLCache sharedURLCache] currentDiskUsage], [[NSURLCache sharedURLCache] currentDiskUsage]);
+        
+        NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:240.0];
+        /**
+        if(![imageURL isEqualToString:@"http://localhost:8080/meow"]){
+            NSCachedURLResponse *cached_response = [[NSURLCache sharedURLCache] cachedResponseForRequest:req];
+            if(cached_response) {
+                imageData = [cached_response data];
+                NSLog(@"using cached response %@", [[cached_response response] URL]);
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
+                return;
+            }
+            NSLog(@"Resp: %@", cached_response);
+        }
+         **/
+        
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+        
         [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
             float sofar = ((float)((int)totalBytesWritten) / (float)((int)totalBytesExpectedToWrite));
             if(sofar - last_sofar >= 0.05 || sofar > 0.99) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"imagePercentDone" object:@{@"controller":self, @"percent": [NSNumber numberWithFloat:sofar]}];
             }
         }];
+        
+        /**
+        [operation setCacheResponseBlock:^NSCachedURLResponse *(NSURLConnection *connection, NSCachedURLResponse *cachedResponse) {
+            
+            NSCachedURLResponse *cr = [[NSCachedURLResponse alloc] initWithResponse:cachedResponse.response data:cachedResponse.data userInfo:cachedResponse.userInfo storagePolicy:NSURLCacheStorageAllowed];
+            [[NSURLCache sharedURLCache] storeCachedResponse:cr forRequest:req];
+            return cr;
+        }];
+         **/
+        
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
             imageURL = [[[request response] URL] absoluteString];
-            NSLog(@"DONE! %@",[imageURL lastPathComponent]);
+            NSLog(@"Done downloading %@!", imageURL);
             imageData = data;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
