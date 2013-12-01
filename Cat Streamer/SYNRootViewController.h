@@ -10,6 +10,7 @@
 #import "SYNCatHerder.h"
 #import "SYNStatusBarController.h"
 #import "Cat.h"
+#import <iAd/iAd.h>
 
 
 @interface SYNRootViewController : UIViewController <UIPageViewControllerDelegate>
