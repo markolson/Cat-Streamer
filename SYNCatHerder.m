@@ -64,7 +64,6 @@
 - (void)imageReady:(NSNotification *)sender
 {
     SYNCatViewController *c = (SYNCatViewController *)[sender object];
-    NSLog(@"set %@", [[NSURL URLWithString:c.imageURL] lastPathComponent]);
-    [catz setObject:[[NSURL URLWithString:c.imageURL] lastPathComponent] forKey:[NSNumber numberWithInt:(c.view.tag - TAGOFFSET)]];
+    [catz setObject:c.shortCode forKey:[NSNumber numberWithInt:(c.view.tag - TAGOFFSET)]];
 }
 @end

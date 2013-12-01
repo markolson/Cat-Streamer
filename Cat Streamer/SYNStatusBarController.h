@@ -12,6 +12,8 @@
 #import "MBProgressHUD.h"
 #import "NSTimer+Blocks.h"
 
+#import "OWActivities.h"
+
 @interface SYNStatusBarController : UIViewController
 
 @property UIToolbar IBOutlet *toolbar;

@@ -1,0 +1,49 @@
+/*
+ OWActivityViewController.strings
+ Created by Sergio Padrino on 08/16/13.
+*/
+
+/////////////////////
+// ACTIVITIES
+/////////////////////
+
+/* Mail */
+"activity.Mail.title"="Enviar por correo";
+
+/* Copy */
+"activity.Copy.title"="Copiar";
+
+/* Facebook */
+"activity.Facebook.title"="Facebook";
+
+/* Sina Weibo */
+"activity.SinaWeibo.title"="Sina Weibo";
+
+/* Open in Maps */
+"activity.Maps.title"="Abrir en Mapas";
+
+/* Message */
+"activity.Message.title"="Enviar mensaje";
+
+/* Print */
+"activity.Print.title"="Imprimir";
+"activity.Print.error.title"="Error.";
+"activity.Print.error.message"="Error intentando imprimir: %@";
+
+/* Open in Safari */
+"activity.Safari.title"="Abrir en Safari";
+
+/* Save to Camera Roll */
+"activity.CameraRoll.title"="Guardar en Carrete";
+
+/* Twitter */
+"activity.Twitter.title"="Twitter";
+
+/////////////////////
+// GENERIC
+/////////////////////
+
+/* Buttons */
+"button.cancel"="Cancelar";
+"button.dismiss"="Aceptar";
+"button.login"="Iniciar sesión";

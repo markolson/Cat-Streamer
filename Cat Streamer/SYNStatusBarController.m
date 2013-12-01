@@ -7,6 +7,7 @@
 //
 
 #import "SYNStatusBarController.h"
+#import "OWActivityViewController.h"
 
 @interface SYNStatusBarController ()
 
@@ -44,18 +45,17 @@
     [self toggleFavorite];
     CGRect tf = toolbar.frame;
     tf.origin.y = 8;
+    toolbar.alpha = 1;
     toolbar.frame = tf;
     [UIView commitAnimations];
 }
 
 - (void) dropFrame {
     [self toggleFavorite];
-    CGRect tf = toolbar.frame;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:0.4];
-    tf.origin.y = tf.size.height;
-    toolbar.frame = tf;
+    [UIView setAnimationDuration:1];
+    toolbar.alpha = 0.2;
     [UIView commitAnimations];
 }
 
@@ -87,7 +87,6 @@
     activeCat = [Cat findOrCreateByUrl:activeController.imageURL];
     [progressbar setHidden:YES];
     [self dropFrame];
-    [self toggleFavorite];
 }
 
 - (void)updateProgress:(NSNotification *)sender
@@ -118,6 +117,7 @@
 - (void)toggleFavorite {
     
     [favorite setEnabled:activeController.isLoaded];
+    [share setEnabled:activeController.isLoaded];
     if(activeCat.favorited.boolValue == YES)
     {
         [favorite setStyle:UIBarButtonItemStyleDone];
@@ -130,5 +130,34 @@
     }
 }
 
--(void) shared {}
+-(void) shared {
+    OWSaveToCameraRollActivity *saveToCameraRollActivity = [[OWSaveToCameraRollActivity alloc] init];
+    OWMessageActivity *messageActivity = [[OWMessageActivity alloc] init];
+    OWMailActivity *mailActivity = [[OWMailActivity alloc] init];
+    //OWTumblrActivity *mailActivity = [[OWMailActivity alloc] init];
+
+    OWFacebookActivity *facebookActivity = [[OWFacebookActivity alloc] init];
+    OWTwitterActivity *twitterActivity = [[OWTwitterActivity alloc] init];
+    
+    OWActivity *copyActivity = [[OWActivity alloc] initWithTitle:@"Copy"
+                                                             image:[UIImage imageNamed:@"OWActivityViewController.bundle/Icon_Copy"]
+                                                       actionBlock:^(OWActivity *activity, OWActivityViewController *activityViewController) {
+                                                           [[UIPasteboard generalPasteboard] setData:activeController.imageData forPasteboardType:@"com.compuserve.gif" ];
+                                                           [activityViewController dismissViewControllerAnimated:YES completion:^{
+                                                           }];
+                                                       }];
+    
+    
+    NSArray *activities = @[saveToCameraRollActivity, mailActivity, messageActivity, facebookActivity, twitterActivity, copyActivity];
+    
+    OWActivityViewController *activityViewController = [[OWActivityViewController alloc] initWithViewController:self activities:activities];
+    activityViewController.userInfo = @{
+                                        //@"image": [UIImage imageWithData:activeController.imageData],
+                                        @"text": @"Meeeeee-ow.",
+                                        @"url": [NSURL URLWithString:activeController.permalink]
+                                        };
+    
+    [activityViewController presentFromRootViewController];
+    
+}
 @end

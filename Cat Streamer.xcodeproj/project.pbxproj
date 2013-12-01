@@ -13,6 +13,29 @@
 		4D08AE3A17D58A3600231594 /* nyancon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE3917D58A3600231594 /* nyancon.png */; };
 		4D08AE3C17D58A5800231594 /* nyancon-b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D08AE3B17D58A5800231594 /* nyancon-b@2x.png */; };
 		4D62DD1317D56F86009B65B3 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D62DD1217D56F86009B65B3 /* NSTimer+Blocks.m */; };
+		4DB98FD2184ACDF3007F0D97 /* OWActivityViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DB98F9F184ACDF3007F0D97 /* OWActivityViewController.strings */; };
+		4DB98FD3184ACDF3007F0D97 /* OWActivityViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DB98FA2184ACDF3007F0D97 /* OWActivityViewController.strings */; };
+		4DB98FD4184ACDF3007F0D97 /* OWActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FAC184ACDF3007F0D97 /* OWActivity.m */; };
+		4DB98FD5184ACDF3007F0D97 /* OWActivityDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FAE184ACDF3007F0D97 /* OWActivityDelegateObject.m */; };
+		4DB98FD6184ACDF3007F0D97 /* OWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FB0184ACDF3007F0D97 /* OWActivityView.m */; };
+		4DB98FD7184ACDF3007F0D97 /* OWActivityViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4DB98FB1184ACDF3007F0D97 /* OWActivityViewController.bundle */; };
+		4DB98FD8184ACDF3007F0D97 /* OWActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FB3184ACDF3007F0D97 /* OWActivityViewController.m */; };
+		4DB98FD9184ACDF3007F0D97 /* OWCopyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FB5184ACDF3007F0D97 /* OWCopyActivity.m */; };
+		4DB98FDA184ACDF3007F0D97 /* OWFacebookActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FB7184ACDF3007F0D97 /* OWFacebookActivity.m */; };
+		4DB98FDB184ACDF3007F0D97 /* OWMailActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FB9184ACDF3007F0D97 /* OWMailActivity.m */; };
+		4DB98FDC184ACDF3007F0D97 /* OWMapsActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FBB184ACDF3007F0D97 /* OWMapsActivity.m */; };
+		4DB98FDD184ACDF3007F0D97 /* OWMessageActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FBD184ACDF3007F0D97 /* OWMessageActivity.m */; };
+		4DB98FDE184ACDF3007F0D97 /* OWPrintActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FBF184ACDF3007F0D97 /* OWPrintActivity.m */; };
+		4DB98FDF184ACDF3007F0D97 /* OWSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FC1184ACDF3007F0D97 /* OWSafariActivity.m */; };
+		4DB98FE0184ACDF3007F0D97 /* OWSaveToCameraRollActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FC3184ACDF3007F0D97 /* OWSaveToCameraRollActivity.m */; };
+		4DB98FE1184ACDF3007F0D97 /* OWSinaWeiboActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FC5184ACDF3007F0D97 /* OWSinaWeiboActivity.m */; };
+		4DB98FE2184ACDF3007F0D97 /* OWTwitterActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FC7184ACDF3007F0D97 /* OWTwitterActivity.m */; };
+		4DB98FE4184ACDF3007F0D97 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB98FCB184ACDF3007F0D97 /* UIImage+Resize.m */; };
+		4DB98FF0184ACF1D007F0D97 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB98FED184ACE2F007F0D97 /* Social.framework */; };
+		4DB98FF1184ACF22007F0D97 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB98FEB184ACE1E007F0D97 /* Twitter.framework */; };
+		4DB98FF2184ACF5F007F0D97 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB98FE9184ACE16007F0D97 /* MessageUI.framework */; };
+		4DB98FF3184ACF6E007F0D97 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB98FE7184ACE09007F0D97 /* AssetsLibrary.framework */; };
+		4DB98FF9184ADE30007F0D97 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB98FF8184ADE30007F0D97 /* libTestFlight.a */; };
 		F01A4038177A91FE00EB77AB /* OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4035177A91FE00EB77AB /* OLImage.m */; };
 		F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F01A4037177A91FE00EB77AB /* OLImageView.m */; };
 		F01A403B177A938F00EB77AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A403A177A938F00EB77AB /* QuartzCore.framework */; };
@@ -36,8 +59,6 @@
 		F070AFFD177716330027C7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070AFD5177716330027C7BA /* Foundation.framework */; };
 		F070B005177716340027C7BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F070B003177716340027C7BA /* InfoPlist.strings */; };
 		F070B008177716340027C7BA /* Cat_StreamerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B007177716340027C7BA /* Cat_StreamerTests.m */; };
-		F070B014177716AF0027C7BA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B012177716AF0027C7BA /* libTestFlight.a */; };
-		F070B015177716AF0027C7BA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B012177716AF0027C7BA /* libTestFlight.a */; };
 		F070B017177716CA0027C7BA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F070B016177716CA0027C7BA /* libz.dylib */; };
 		F070B0A4177718D40027C7BA /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B047177718D30027C7BA /* AFHTTPClient.m */; };
 		F070B0A5177718D40027C7BA /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F070B047177718D30027C7BA /* AFHTTPClient.m */; };
@@ -89,10 +110,63 @@
 		4D08AE3717D58A0B00231594 /* nyancon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nyancon@2x.png"; sourceTree = "<group>"; };
 		4D08AE3917D58A3600231594 /* nyancon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nyancon.png; sourceTree = "<group>"; };
 		4D08AE3B17D58A5800231594 /* nyancon-b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nyancon-b@2x.png"; sourceTree = "<group>"; };
-		4D2F81A017D4109600158624 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		4D2F81A117D4109600158624 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		4D62DD1117D56F86009B65B3 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		4D62DD1217D56F86009B65B3 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		4DB98FA0184ACDF3007F0D97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA3184ACDF3007F0D97 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA4184ACDF3007F0D97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA5184ACDF3007F0D97 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA6184ACDF3007F0D97 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA7184ACDF3007F0D97 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA8184ACDF3007F0D97 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/OWActivityViewController.strings; sourceTree = "<group>"; };
+		4DB98FA9184ACDF3007F0D97 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OWActivityViewController.strings"; sourceTree = "<group>"; };
+		4DB98FAA184ACDF3007F0D97 /* OWActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivities.h; sourceTree = "<group>"; };
+		4DB98FAB184ACDF3007F0D97 /* OWActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivity.h; sourceTree = "<group>"; };
+		4DB98FAC184ACDF3007F0D97 /* OWActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivity.m; sourceTree = "<group>"; };
+		4DB98FAD184ACDF3007F0D97 /* OWActivityDelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivityDelegateObject.h; sourceTree = "<group>"; };
+		4DB98FAE184ACDF3007F0D97 /* OWActivityDelegateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivityDelegateObject.m; sourceTree = "<group>"; };
+		4DB98FAF184ACDF3007F0D97 /* OWActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivityView.h; sourceTree = "<group>"; };
+		4DB98FB0184ACDF3007F0D97 /* OWActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivityView.m; sourceTree = "<group>"; };
+		4DB98FB1184ACDF3007F0D97 /* OWActivityViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = OWActivityViewController.bundle; sourceTree = "<group>"; };
+		4DB98FB2184ACDF3007F0D97 /* OWActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWActivityViewController.h; sourceTree = "<group>"; };
+		4DB98FB3184ACDF3007F0D97 /* OWActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWActivityViewController.m; sourceTree = "<group>"; };
+		4DB98FB4184ACDF3007F0D97 /* OWCopyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWCopyActivity.h; sourceTree = "<group>"; };
+		4DB98FB5184ACDF3007F0D97 /* OWCopyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWCopyActivity.m; sourceTree = "<group>"; };
+		4DB98FB6184ACDF3007F0D97 /* OWFacebookActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWFacebookActivity.h; sourceTree = "<group>"; };
+		4DB98FB7184ACDF3007F0D97 /* OWFacebookActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWFacebookActivity.m; sourceTree = "<group>"; };
+		4DB98FB8184ACDF3007F0D97 /* OWMailActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMailActivity.h; sourceTree = "<group>"; };
+		4DB98FB9184ACDF3007F0D97 /* OWMailActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMailActivity.m; sourceTree = "<group>"; };
+		4DB98FBA184ACDF3007F0D97 /* OWMapsActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMapsActivity.h; sourceTree = "<group>"; };
+		4DB98FBB184ACDF3007F0D97 /* OWMapsActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMapsActivity.m; sourceTree = "<group>"; };
+		4DB98FBC184ACDF3007F0D97 /* OWMessageActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMessageActivity.h; sourceTree = "<group>"; };
+		4DB98FBD184ACDF3007F0D97 /* OWMessageActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMessageActivity.m; sourceTree = "<group>"; };
+		4DB98FBE184ACDF3007F0D97 /* OWPrintActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPrintActivity.h; sourceTree = "<group>"; };
+		4DB98FBF184ACDF3007F0D97 /* OWPrintActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPrintActivity.m; sourceTree = "<group>"; };
+		4DB98FC0184ACDF3007F0D97 /* OWSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSafariActivity.h; sourceTree = "<group>"; };
+		4DB98FC1184ACDF3007F0D97 /* OWSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSafariActivity.m; sourceTree = "<group>"; };
+		4DB98FC2184ACDF3007F0D97 /* OWSaveToCameraRollActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSaveToCameraRollActivity.h; sourceTree = "<group>"; };
+		4DB98FC3184ACDF3007F0D97 /* OWSaveToCameraRollActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSaveToCameraRollActivity.m; sourceTree = "<group>"; };
+		4DB98FC4184ACDF3007F0D97 /* OWSinaWeiboActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSinaWeiboActivity.h; sourceTree = "<group>"; };
+		4DB98FC5184ACDF3007F0D97 /* OWSinaWeiboActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSinaWeiboActivity.m; sourceTree = "<group>"; };
+		4DB98FC6184ACDF3007F0D97 /* OWTwitterActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWTwitterActivity.h; sourceTree = "<group>"; };
+		4DB98FC7184ACDF3007F0D97 /* OWTwitterActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWTwitterActivity.m; sourceTree = "<group>"; };
+		4DB98FCA184ACDF3007F0D97 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		4DB98FCB184ACDF3007F0D97 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		4DB98FCD184ACDF3007F0D97 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		4DB98FCE184ACDF3007F0D97 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		4DB98FCF184ACDF3007F0D97 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		4DB98FD0184ACDF3007F0D97 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		4DB98FD1184ACDF3007F0D97 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OWActivityViewController.strings"; sourceTree = "<group>"; };
+		4DB98FE7184ACE09007F0D97 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		4DB98FE9184ACE16007F0D97 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4DB98FEB184ACE1E007F0D97 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		4DB98FED184ACE2F007F0D97 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4DB98FF4184ACFCA007F0D97 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK_armv7_armv7s.a; path = "../../Downloads/OWActivityViewController-master/OWActivityViewController/WeChatSDK/libWeChatSDK_armv7_armv7s.a"; sourceTree = "<group>"; };
+		4DB98FF5184ACFCA007F0D97 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = "../../Downloads/OWActivityViewController-master/OWActivityViewController/WeChatSDK/libWeChatSDK.a"; sourceTree = "<group>"; };
+		4DB98FF8184ADE30007F0D97 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		4DB98FFA184ADE9B007F0D97 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		4DB98FFB184ADE9B007F0D97 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		4DB98FFC184ADE9B007F0D97 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		F01A4034177A91FE00EB77AB /* OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImage.h; path = OLImageView/OLImage.h; sourceTree = "<group>"; };
 		F01A4035177A91FE00EB77AB /* OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OLImage.m; path = OLImageView/OLImage.m; sourceTree = "<group>"; };
 		F01A4036177A91FE00EB77AB /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OLImageView.h; path = OLImageView/OLImageView.h; sourceTree = "<group>"; };
@@ -126,8 +200,6 @@
 		F070B004177716340027C7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F070B006177716340027C7BA /* Cat_StreamerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat_StreamerTests.h; sourceTree = "<group>"; };
 		F070B007177716340027C7BA /* Cat_StreamerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat_StreamerTests.m; sourceTree = "<group>"; };
-		F070B012177716AF0027C7BA /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		F070B013177716AF0027C7BA /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		F070B016177716CA0027C7BA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F070B046177718D30027C7BA /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
 		F070B047177718D30027C7BA /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
@@ -166,6 +238,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB98FF3184ACF6E007F0D97 /* AssetsLibrary.framework in Frameworks */,
+				4DB98FF9184ADE30007F0D97 /* libTestFlight.a in Frameworks */,
+				4DB98FF2184ACF5F007F0D97 /* MessageUI.framework in Frameworks */,
+				4DB98FF1184ACF22007F0D97 /* Twitter.framework in Frameworks */,
+				4DB98FF0184ACF1D007F0D97 /* Social.framework in Frameworks */,
 				F036D6451789A09F00B3560C /* CoreData.framework in Frameworks */,
 				F036D5FA17861DBE00B3560C /* iAd.framework in Frameworks */,
 				F01A403D177A93BD00EB77AB /* MobileCoreServices.framework in Frameworks */,
@@ -175,7 +252,6 @@
 				F070AFD6177716330027C7BA /* Foundation.framework in Frameworks */,
 				F070AFD8177716330027C7BA /* CoreGraphics.framework in Frameworks */,
 				F070B017177716CA0027C7BA /* libz.dylib in Frameworks */,
-				F070B014177716AF0027C7BA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,13 +262,73 @@
 				F070AFFB177716330027C7BA /* SenTestingKit.framework in Frameworks */,
 				F070AFFC177716330027C7BA /* UIKit.framework in Frameworks */,
 				F070AFFD177716330027C7BA /* Foundation.framework in Frameworks */,
-				F070B015177716AF0027C7BA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DB98F9E184ACDF3007F0D97 /* OWActivityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4DB98F9F184ACDF3007F0D97 /* OWActivityViewController.strings */,
+				4DB98FA1184ACDF3007F0D97 /* Localizations */,
+				4DB98FAA184ACDF3007F0D97 /* OWActivities.h */,
+				4DB98FAB184ACDF3007F0D97 /* OWActivity.h */,
+				4DB98FAC184ACDF3007F0D97 /* OWActivity.m */,
+				4DB98FAD184ACDF3007F0D97 /* OWActivityDelegateObject.h */,
+				4DB98FAE184ACDF3007F0D97 /* OWActivityDelegateObject.m */,
+				4DB98FAF184ACDF3007F0D97 /* OWActivityView.h */,
+				4DB98FB0184ACDF3007F0D97 /* OWActivityView.m */,
+				4DB98FB1184ACDF3007F0D97 /* OWActivityViewController.bundle */,
+				4DB98FB2184ACDF3007F0D97 /* OWActivityViewController.h */,
+				4DB98FB3184ACDF3007F0D97 /* OWActivityViewController.m */,
+				4DB98FB4184ACDF3007F0D97 /* OWCopyActivity.h */,
+				4DB98FB5184ACDF3007F0D97 /* OWCopyActivity.m */,
+				4DB98FB6184ACDF3007F0D97 /* OWFacebookActivity.h */,
+				4DB98FB7184ACDF3007F0D97 /* OWFacebookActivity.m */,
+				4DB98FB8184ACDF3007F0D97 /* OWMailActivity.h */,
+				4DB98FB9184ACDF3007F0D97 /* OWMailActivity.m */,
+				4DB98FBA184ACDF3007F0D97 /* OWMapsActivity.h */,
+				4DB98FBB184ACDF3007F0D97 /* OWMapsActivity.m */,
+				4DB98FBC184ACDF3007F0D97 /* OWMessageActivity.h */,
+				4DB98FBD184ACDF3007F0D97 /* OWMessageActivity.m */,
+				4DB98FBE184ACDF3007F0D97 /* OWPrintActivity.h */,
+				4DB98FBF184ACDF3007F0D97 /* OWPrintActivity.m */,
+				4DB98FC0184ACDF3007F0D97 /* OWSafariActivity.h */,
+				4DB98FC1184ACDF3007F0D97 /* OWSafariActivity.m */,
+				4DB98FC2184ACDF3007F0D97 /* OWSaveToCameraRollActivity.h */,
+				4DB98FC3184ACDF3007F0D97 /* OWSaveToCameraRollActivity.m */,
+				4DB98FC4184ACDF3007F0D97 /* OWSinaWeiboActivity.h */,
+				4DB98FC5184ACDF3007F0D97 /* OWSinaWeiboActivity.m */,
+				4DB98FC6184ACDF3007F0D97 /* OWTwitterActivity.h */,
+				4DB98FC7184ACDF3007F0D97 /* OWTwitterActivity.m */,
+				4DB98FCA184ACDF3007F0D97 /* UIImage+Resize.h */,
+				4DB98FCB184ACDF3007F0D97 /* UIImage+Resize.m */,
+				4DB98FCC184ACDF3007F0D97 /* WeChatSDK */,
+			);
+			path = OWActivityViewController;
+			sourceTree = "<group>";
+		};
+		4DB98FA1184ACDF3007F0D97 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				4DB98FA2184ACDF3007F0D97 /* OWActivityViewController.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		4DB98FCC184ACDF3007F0D97 /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4DB98FCD184ACDF3007F0D97 /* libWeChatSDK.a */,
+				4DB98FCE184ACDF3007F0D97 /* libWeChatSDK_armv7_armv7s.a */,
+				4DB98FCF184ACDF3007F0D97 /* WXApi.h */,
+				4DB98FD0184ACDF3007F0D97 /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
 		F036D649178A15DF00B3560C /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +361,12 @@
 		F070AFD2177716330027C7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DB98FF4184ACFCA007F0D97 /* libWeChatSDK_armv7_armv7s.a */,
+				4DB98FF5184ACFCA007F0D97 /* libWeChatSDK.a */,
+				4DB98FED184ACE2F007F0D97 /* Social.framework */,
+				4DB98FEB184ACE1E007F0D97 /* Twitter.framework */,
+				4DB98FE9184ACE16007F0D97 /* MessageUI.framework */,
+				4DB98FE7184ACE09007F0D97 /* AssetsLibrary.framework */,
 				F036D6441789A09F00B3560C /* CoreData.framework */,
 				F070B1781777DD200027C7BA /* iAd.framework */,
 				F01A403C177A93BD00EB77AB /* MobileCoreServices.framework */,
@@ -268,10 +410,10 @@
 			children = (
 				F070B16B177798140027C7BA /* Assets */,
 				F070B16117772AD50027C7BA /* Cats */,
-				F070B012177716AF0027C7BA /* libTestFlight.a */,
-				F070B013177716AF0027C7BA /* TestFlight.h */,
-				4D2F81A017D4109600158624 /* TestFlight+AsyncLogging.h */,
-				4D2F81A117D4109600158624 /* TestFlight+ManualSessions.h */,
+				4DB98FF8184ADE30007F0D97 /* libTestFlight.a */,
+				4DB98FFA184ADE9B007F0D97 /* TestFlight.h */,
+				4DB98FFB184ADE9B007F0D97 /* TestFlight+AsyncLogging.h */,
+				4DB98FFC184ADE9B007F0D97 /* TestFlight+ManualSessions.h */,
 				F070AFDB177716330027C7BA /* Cat Streamer-Info.plist */,
 				F070AFDC177716330027C7BA /* InfoPlist.strings */,
 				F070AFDF177716330027C7BA /* main.m */,
@@ -302,6 +444,7 @@
 		F070B011177716650027C7BA /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				4DB98F9E184ACDF3007F0D97 /* OWActivityViewController */,
 				F036D649178A15DF00B3560C /* MBProgressHUD */,
 				F01A4034177A91FE00EB77AB /* OLImage.h */,
 				F01A4035177A91FE00EB77AB /* OLImage.m */,
@@ -430,6 +573,12 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
+				es,
+				fr,
+				ru,
+				sv,
+				"zh-Hans",
 			);
 			mainGroup = F070AFC7177716330027C7BA;
 			productRefGroup = F070AFD1177716330027C7BA /* Products */;
@@ -447,9 +596,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB98FD2184ACDF3007F0D97 /* OWActivityViewController.strings in Resources */,
 				F070AFDE177716330027C7BA /* InfoPlist.strings in Resources */,
 				4D08AE3817D58A0B00231594 /* nyancon@2x.png in Resources */,
 				4D08AE3A17D58A3600231594 /* nyancon.png in Resources */,
+				4DB98FD3184ACDF3007F0D97 /* OWActivityViewController.strings in Resources */,
+				4DB98FD7184ACDF3007F0D97 /* OWActivityViewController.bundle in Resources */,
 				4D08AE2E17D5882700231594 /* Images.xcassets in Resources */,
 				F070B15F1777285A0027C7BA /* Cats.storyboard in Resources */,
 				F070B16917777EE70027C7BA /* nyan-cat-white-background.gif in Resources */,
@@ -498,25 +650,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				F070AFE0177716330027C7BA /* main.m in Sources */,
+				4DB98FD8184ACDF3007F0D97 /* OWActivityViewController.m in Sources */,
+				4DB98FE1184ACDF3007F0D97 /* OWSinaWeiboActivity.m in Sources */,
+				4DB98FDD184ACDF3007F0D97 /* OWMessageActivity.m in Sources */,
+				4DB98FD6184ACDF3007F0D97 /* OWActivityView.m in Sources */,
 				F070AFE4177716330027C7BA /* SYNAppDelegate.m in Sources */,
 				F01A4038177A91FE00EB77AB /* OLImage.m in Sources */,
 				F070AFED177716330027C7BA /* SYNRootViewController.m in Sources */,
 				F070B0A4177718D40027C7BA /* AFHTTPClient.m in Sources */,
+				4DB98FE4184ACDF3007F0D97 /* UIImage+Resize.m in Sources */,
 				F070B0A6177718D40027C7BA /* AFHTTPRequestOperation.m in Sources */,
+				4DB98FE0184ACDF3007F0D97 /* OWSaveToCameraRollActivity.m in Sources */,
 				F036D5FE17862B7100B3560C /* SYNStatusBarController.m in Sources */,
 				F036D64C178A160600B3560C /* MBProgressHUD.m in Sources */,
+				4DB98FD5184ACDF3007F0D97 /* OWActivityDelegateObject.m in Sources */,
+				4DB98FDE184ACDF3007F0D97 /* OWPrintActivity.m in Sources */,
+				4DB98FD9184ACDF3007F0D97 /* OWCopyActivity.m in Sources */,
 				F070B0A8177718D40027C7BA /* AFImageRequestOperation.m in Sources */,
 				F070B0AA177718D40027C7BA /* AFJSONRequestOperation.m in Sources */,
 				F070B0AC177718D40027C7BA /* AFNetworkActivityIndicatorManager.m in Sources */,
+				4DB98FDA184ACDF3007F0D97 /* OWFacebookActivity.m in Sources */,
 				F036D6481789A59400B3560C /* Cat.m in Sources */,
+				4DB98FDB184ACDF3007F0D97 /* OWMailActivity.m in Sources */,
+				4DB98FDC184ACDF3007F0D97 /* OWMapsActivity.m in Sources */,
 				4D62DD1317D56F86009B65B3 /* NSTimer+Blocks.m in Sources */,
+				4DB98FDF184ACDF3007F0D97 /* OWSafariActivity.m in Sources */,
 				F070B0AE177718D40027C7BA /* AFPropertyListRequestOperation.m in Sources */,
 				F070B0B0177718D40027C7BA /* AFURLConnectionOperation.m in Sources */,
 				F070B0B2177718D40027C7BA /* AFXMLRequestOperation.m in Sources */,
 				F036D60217899E7300B3560C /* Basket.xcdatamodeld in Sources */,
 				F070B0B4177718D40027C7BA /* UIImageView+AFNetworking.m in Sources */,
+				4DB98FE2184ACDF3007F0D97 /* OWTwitterActivity.m in Sources */,
 				F070B153177723C30027C7BA /* SYNCatHerder.m in Sources */,
 				F01A4039177A91FE00EB77AB /* OLImageView.m in Sources */,
+				4DB98FD4184ACDF3007F0D97 /* OWActivity.m in Sources */,
 				F070B157177724470027C7BA /* SYNCatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +718,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4DB98F9F184ACDF3007F0D97 /* OWActivityViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DB98FA0184ACDF3007F0D97 /* en */,
+				4DB98FD1184ACDF3007F0D97 /* zh-Hans */,
+			);
+			name = OWActivityViewController.strings;
+			sourceTree = "<group>";
+		};
+		4DB98FA2184ACDF3007F0D97 /* OWActivityViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DB98FA3184ACDF3007F0D97 /* de */,
+				4DB98FA4184ACDF3007F0D97 /* en */,
+				4DB98FA5184ACDF3007F0D97 /* es */,
+				4DB98FA6184ACDF3007F0D97 /* fr */,
+				4DB98FA7184ACDF3007F0D97 /* ru */,
+				4DB98FA8184ACDF3007F0D97 /* sv */,
+				4DB98FA9184ACDF3007F0D97 /* zh-Hans */,
+			);
+			name = OWActivityViewController.strings;
+			sourceTree = "<group>";
+		};
 		F070AFDC177716330027C7BA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -637,10 +827,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Cat Streamer\"",
+					"\\\"$(SRCROOT)/Cat\\ Streamer\\\"",
+					"/Users/mark/Code/Cat-Streamer/OWActivityViewController/WeChatSDK",
+					"/Users/mark/Code/Cat-Streamer/Cat\\ Streamer",
+					"/Users/mark/Downloads/OWActivityViewController-master/OWActivityViewController/WeChatSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B1B26C38-D316-4AC0-B5C6-78D8E2D73DFF";
@@ -658,10 +851,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cat Streamer/Cat Streamer-Prefix.pch";
 				INFOPLIST_FILE = "Cat Streamer/Cat Streamer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Cat Streamer\"",
+					"\\\"$(SRCROOT)/Cat\\ Streamer\\\"",
+					"/Users/mark/Code/Cat-Streamer/OWActivityViewController/WeChatSDK",
+					"/Users/mark/Code/Cat-Streamer/Cat\\ Streamer",
+					"/Users/mark/Downloads/OWActivityViewController-master/OWActivityViewController/WeChatSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B1B26C38-D316-4AC0-B5C6-78D8E2D73DFF";

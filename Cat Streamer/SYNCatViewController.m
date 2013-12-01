@@ -73,9 +73,12 @@
 }
 
 - (void)copyLinktoClipboard:(id)sender {
-	[UIPasteboard generalPasteboard].string = self.imageURL;
+	[UIPasteboard generalPasteboard].string = [self permalink];
 }
 
+- (NSString *)permalink {
+    return [NSString stringWithFormat:@"http://cutestreamer.herokuapp.com/meow/%@", self.shortCode];
+}
 
 -(void)copyImagetoClipboard:(id)sender {
     [[UIPasteboard generalPasteboard] setData:imageData forPasteboardType:@"com.compuserve.gif" ];
@@ -86,29 +89,15 @@
 }
 
 -(void)loadImage {
-    if(!didAppear || !imageURL) { NSLog(@"Not loading yet."); return; }
-    if([imageData bytes] > 0) { NSLog(@"Already load{ed,ing}!"); return; }
+    if(!didAppear || !imageURL) { return; }
+    if([imageData bytes] > 0) { return; }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"Starting! %@", imageURL);
         loaded = NO;
         float last_sofar = 0.0;
-        NSLog(@"cache size: %d of %d | %d of %d", [[NSURLCache sharedURLCache] currentMemoryUsage], [[NSURLCache sharedURLCache] currentMemoryUsage], [[NSURLCache sharedURLCache] currentDiskUsage], [[NSURLCache sharedURLCache] currentDiskUsage]);
-        
+
         NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:self.imageURL] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:240.0];
-        /**
-        if(![imageURL isEqualToString:@"http://localhost:8080/meow"]){
-            NSCachedURLResponse *cached_response = [[NSURLCache sharedURLCache] cachedResponseForRequest:req];
-            if(cached_response) {
-                imageData = [cached_response data];
-                NSLog(@"using cached response %@", [[cached_response response] URL]);
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
-                return;
-            }
-            NSLog(@"Resp: %@", cached_response);
-        }
-         **/
-        
+
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
         
         [operation setDownloadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
@@ -118,19 +107,11 @@
             }
         }];
         
-        /**
-        [operation setCacheResponseBlock:^NSCachedURLResponse *(NSURLConnection *connection, NSCachedURLResponse *cachedResponse) {
-            
-            NSCachedURLResponse *cr = [[NSCachedURLResponse alloc] initWithResponse:cachedResponse.response data:cachedResponse.data userInfo:cachedResponse.userInfo storagePolicy:NSURLCacheStorageAllowed];
-            [[NSURLCache sharedURLCache] storeCachedResponse:cr forRequest:req];
-            return cr;
-        }];
-         **/
-        
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *request, id data) {
-            imageURL = [[[request response] URL] absoluteString];
-            NSLog(@"Done downloading %@!", imageURL);
+            shortCode = [[[request response] URL] lastPathComponent];
+            imageURL = [self permalink];
             imageData = data;
+            loaded = YES;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"imageReady" object:self];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             TFLog(@"GIFAIL on %@", self.imageURL);
@@ -144,7 +125,6 @@
 - (void)imageReady:(NSNotification *)sender
 {
     if([sender object] == self) {
-        loaded = YES;
         [self.view setBackgroundColor:[UIColor blackColor]];
         [imageView setImage:[OLImage imageWithData:imageData] ];
     };

@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *shortCode;
 
 -(bool)isLoaded;
+-(NSString *)permalink;
 @end
 
 

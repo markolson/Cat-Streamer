@@ -9,6 +9,7 @@
 #import "SYNAppDelegate.h"
 
 #import "SYNRootViewController.h"
+#import "TestFlight.h"
 
 @implementation SYNAppDelegate
 
@@ -25,7 +26,7 @@
     
     [NSURLCache setSharedURLCache:URLCache];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
-     //[TestFlight setDeviceIdentifier:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+    [TestFlight setDeviceIdentifier:[[[UIDevice currentDevice] identifierForVendor] UUIDString]] ;
     [TestFlight takeOff:@"8719a52f-2d62-4e0f-8762-b159b0526e5d"];
     return YES;
 }
@@ -98,7 +99,6 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
-    NSLog(@"%@", [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
